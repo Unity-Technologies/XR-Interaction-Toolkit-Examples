@@ -171,6 +171,9 @@ public class ControllerManager : MonoBehaviour
         /// </summary>
         public void ClearAll()
         {
+            if(m_Interactors == null)
+                return;
+
             for(int i = 0; i < (int)ControllerStates.MAX; ++i)
             {
                 m_Interactors[i].Leave();
@@ -184,7 +187,7 @@ public class ControllerManager : MonoBehaviour
         /// <param name="parentGamObject">The game object that represents the interactor for that state.</param>
         public void SetGameObject(ControllerStates state, GameObject parentGamObject)
         {
-            if (state == ControllerStates.MAX)
+            if ((state == ControllerStates.MAX) || (m_Interactors == null))
                 return;
 
             m_Interactors[(int)state].Attach(parentGamObject);
@@ -219,12 +222,6 @@ public class ControllerManager : MonoBehaviour
 
     void OnEnable()
     {
-        InputDevices.deviceConnected += RegisterDevices;
-        List<InputDevice> devices = new List<InputDevice>();
-        InputDevices.GetDevices(devices);
-        for (int i = 0; i < devices.Count; i++)
-            RegisterDevices(devices[i]);
-
         m_RightControllerState.Initalize();
         m_LeftControllerState.Initalize();
 
@@ -236,6 +233,12 @@ public class ControllerManager : MonoBehaviour
 
         m_LeftControllerState.ClearAll();
         m_RightControllerState.ClearAll();
+
+        InputDevices.deviceConnected += RegisterDevices;
+        List<InputDevice> devices = new List<InputDevice>();
+        InputDevices.GetDevices(devices);
+        for (int i = 0; i < devices.Count; i++)
+            RegisterDevices(devices[i]);
     }
 
     void OnDisable()
