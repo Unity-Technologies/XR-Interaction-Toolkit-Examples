@@ -4,9 +4,12 @@ using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 
-[DefaultExecutionOrder(10)]
+[DefaultExecutionOrder(kControllerManagerUpdateOrder)]
 public class ControllerManager : MonoBehaviour
 {
+    // Slightly after the default, so that any actions such as release or grab can be processed *before* we switch controllers.
+    public const int kControllerManagerUpdateOrder = 10;
+
     InputDevice m_RightController;
     InputDevice m_LeftController;
 
