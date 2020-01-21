@@ -341,7 +341,7 @@ public class ControllerManager : MonoBehaviour
             bool deactivated = false;
             for (int i = 0; i < m_DeactivationButtons.Count; i++)
             {
-                m_LeftController.IsPressed(m_DeactivationButtons[i], out bool value);
+                m_RightController.IsPressed(m_DeactivationButtons[i], out bool value);
                 deactivated |= value;
             }
 
