@@ -7699,7 +7699,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   m_ThrowVelocityScale: 1.5
-  m_ThrowAngularVelocityScale: 0.25
+  m_ThrowAngularVelocityScale: 1
   m_GravityOnDetach: 0
 --- !u!65 &1174435681032161
 BoxCollider:
@@ -8031,7 +8031,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   m_ThrowVelocityScale: 1.5
-  m_ThrowAngularVelocityScale: 0.25
+  m_ThrowAngularVelocityScale: 1
   m_GravityOnDetach: 0
 --- !u!65 &1544310753573365
 BoxCollider:
@@ -8208,7 +8208,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   m_ThrowVelocityScale: 1.5
-  m_ThrowAngularVelocityScale: 0.25
+  m_ThrowAngularVelocityScale: 1
   m_GravityOnDetach: 0
 --- !u!54 &1622505853958277
 Rigidbody:
@@ -10886,6 +10886,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_InteractionLayerMask.m_Bits
       value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 7606424657617587099, guid: cca5e4e0da45560479c022557d04fa1d,
+        type: 3}
+      propertyPath: m_ThrowAngularVelocityScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cca5e4e0da45560479c022557d04fa1d, type: 3}
