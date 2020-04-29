@@ -55,7 +55,7 @@ public class ControllerManager : MonoBehaviour
 
     [SerializeField]
     [Tooltip("If set to true the latest activated controller gets teleport mode when OneActiveTeleportController is true.")]
-    bool m_LatestActiveTeleportController = false;
+    bool m_LatestActiveTeleportController = true;
     /// <summary>
     /// If set to true the latest activated controller gets teleport mode when OneActiveTeleportController is true.
     /// </summary>
