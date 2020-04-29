@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
@@ -13,22 +13,53 @@ public class ControllerManager : MonoBehaviour
     InputDevice m_RightController;
     InputDevice m_LeftController;
 
+    [System.Serializable]
+    public class buttonThreshold
+    {   
+        [Tooltip("The button on the controller that will trigger a transition to the Teleport Controller.")]
+        public InputHelpers.Button button;
+        /// <summary>
+        /// The button on the controller that will force a deactivation of the teleport option.
+        /// </summary>
+        [Tooltip("The threshold at which the button activates.")]
+        public float threshold;
+        /// <summary>
+        /// The threshold at which the button activates.
+        /// </summary>
+    }
+
     [SerializeField]
     [Tooltip("The buttons on the controller that will trigger a transition to the Teleport Controller.")]
-    List<InputHelpers.Button> m_ActivationButtons = new List<InputHelpers.Button>();
+    List<buttonThreshold> m_ActivationButtons = new List<buttonThreshold>();
     /// <summary>
     /// The buttons on the controller that will trigger a transition to the Teleport Controller.
     /// </summary>
-    public List<InputHelpers.Button> activationButtons { get { return m_ActivationButtons; } set { m_ActivationButtons = value; } }
+    public List<buttonThreshold> activationButtons { get { return m_ActivationButtons; } set { m_ActivationButtons = value; } }
 
 
     [SerializeField]
     [Tooltip("The buttons on the controller that will force a deactivation of the teleport option.")]
-    List<InputHelpers.Button> m_DeactivationButtons = new List<InputHelpers.Button>();
+    List<buttonThreshold> m_DeactivationButtons = new List<buttonThreshold>();
     /// <summary>
-    /// The buttons on the controller that will trigger a transition to the Teleport Controller.
+    /// The buttons on the controller that will force a deactivation of the teleport option.
     /// </summary>
-    public List<InputHelpers.Button> deactivationButtons { get { return m_DeactivationButtons; } set { m_DeactivationButtons = value; } }
+    public List<buttonThreshold> deactivationButtons { get { return m_DeactivationButtons; } set { m_DeactivationButtons = value; } }
+    
+    [SerializeField]
+    [Tooltip("If set to true only one hand may be in teleport mode at a time.")]
+    bool m_OneActiveTeleportController = false;
+    /// <summary>
+    /// If set to True only one hand may be in teleport mode at a time.
+    /// </summary>
+    public bool oneActiveTeleportController { get { return m_OneActiveTeleportController; } set { m_OneActiveTeleportController = value; } }
+
+    [SerializeField]
+    [Tooltip("If set to true the latest activated controller gets teleport mode when OneActiveTeleportController is true.")]
+    bool m_LatestActiveTeleportController = true;
+    /// <summary>
+    /// If set to true the latest activated controller gets teleport mode when OneActiveTeleportController is true.
+    /// </summary>
+    public bool latestActiveTeleportController { get { return m_LatestActiveTeleportController; } set { m_LatestActiveTeleportController = value; } }
 
     [SerializeField]
     [Tooltip("The Game Object which represents the left hand for normal interaction purposes.")]
@@ -300,15 +331,15 @@ public class ControllerManager : MonoBehaviour
             bool activated = false;
             for(int i = 0; i < m_ActivationButtons.Count; i++)
             {
-                m_LeftController.IsPressed(m_ActivationButtons[i], out bool value);
+                m_LeftController.IsPressed(m_ActivationButtons[i].button, out bool value, m_ActivationButtons[i].threshold);
                 activated |= value;
             }
 
             bool deactivated = false;
             for (int i = 0; i < m_DeactivationButtons.Count; i++)
             {
-                m_LeftController.IsPressed(m_DeactivationButtons[i], out bool value);
-                m_LeftTeleportDeactivated |= value;
+                m_LeftController.IsPressed(m_DeactivationButtons[i].button, out bool value, m_DeactivationButtons[i].threshold);
+                deactivated |= value;
             }
 
             if (deactivated)
@@ -318,6 +349,11 @@ public class ControllerManager : MonoBehaviour
             if (activated && !m_LeftTeleportDeactivated)
             {
                 m_LeftControllerState.SetState(ControllerStates.Teleport);
+                if (oneActiveTeleportController && ((m_LatestActiveTeleportController && m_RightControllerState.GetState() == ControllerStates.Teleport) || (!m_LatestActiveTeleportController && !m_RightTeleportDeactivated)))
+                {
+                    m_RightControllerState.SetState(ControllerStates.Select);
+                    m_RightTeleportDeactivated = true;
+                }
             }
             // otherwise we're in normal state. 
             else
@@ -334,14 +370,14 @@ public class ControllerManager : MonoBehaviour
             bool activated = false;
             for (int i = 0; i < m_ActivationButtons.Count; i++)
             {
-                m_RightController.IsPressed(m_ActivationButtons[i], out bool value);
+                m_RightController.IsPressed(m_ActivationButtons[i].button, out bool value, m_ActivationButtons[i].threshold);
                 activated |= value;
             }
 
             bool deactivated = false;
             for (int i = 0; i < m_DeactivationButtons.Count; i++)
             {
-                m_RightController.IsPressed(m_DeactivationButtons[i], out bool value);
+                m_RightController.IsPressed(m_DeactivationButtons[i].button, out bool value, m_DeactivationButtons[i].threshold);
                 deactivated |= value;
             }
 
@@ -351,6 +387,11 @@ public class ControllerManager : MonoBehaviour
             if (activated && !m_RightTeleportDeactivated)
             {
                 m_RightControllerState.SetState(ControllerStates.Teleport);
+                if (oneActiveTeleportController && ((m_LatestActiveTeleportController && m_LeftControllerState.GetState() == ControllerStates.Teleport) || (!m_LatestActiveTeleportController && !m_LeftTeleportDeactivated)))
+                {
+                    m_LeftControllerState.SetState(ControllerStates.Select);
+                    m_LeftTeleportDeactivated = true;
+                }
             }
             else
             {
