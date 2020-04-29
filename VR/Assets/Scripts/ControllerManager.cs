@@ -44,6 +44,22 @@ public class ControllerManager : MonoBehaviour
     /// The buttons on the controller that will force a deactivation of the teleport option.
     /// </summary>
     public List<buttonThreshold> deactivationButtons { get { return m_DeactivationButtons; } set { m_DeactivationButtons = value; } }
+    
+    [SerializeField]
+    [Tooltip("If set to true only one hand may be in teleport mode at a time.")]
+    bool m_OneActiveTeleportController = false;
+    /// <summary>
+    /// If set to True only one hand may be in teleport mode at a time.
+    /// </summary>
+    public bool oneActiveTeleportController { get { return m_OneActiveTeleportController; } set { m_OneActiveTeleportController = value; } }
+
+    [SerializeField]
+    [Tooltip("If set to true the latest activated controller gets teleport mode when OneActiveTeleportController is true.")]
+    bool m_LatestActiveTeleportController = false;
+    /// <summary>
+    /// If set to true the latest activated controller gets teleport mode when OneActiveTeleportController is true.
+    /// </summary>
+    public bool latestActiveTeleportController { get { return m_LatestActiveTeleportController; } set { m_LatestActiveTeleportController = value; } }
 
     [SerializeField]
     [Tooltip("The Game Object which represents the left hand for normal interaction purposes.")]
@@ -333,6 +349,11 @@ public class ControllerManager : MonoBehaviour
             if (activated && !m_LeftTeleportDeactivated)
             {
                 m_LeftControllerState.SetState(ControllerStates.Teleport);
+                if (oneActiveTeleportController && ((m_LatestActiveTeleportController && m_RightControllerState.GetState() == ControllerStates.Teleport) || (!m_LatestActiveTeleportController && !m_RightTeleportDeactivated)))
+                {
+                    m_RightControllerState.SetState(ControllerStates.Select);
+                    m_RightTeleportDeactivated = true;
+                }
             }
             // otherwise we're in normal state. 
             else
@@ -366,6 +387,11 @@ public class ControllerManager : MonoBehaviour
             if (activated && !m_RightTeleportDeactivated)
             {
                 m_RightControllerState.SetState(ControllerStates.Teleport);
+                if (oneActiveTeleportController && ((m_LatestActiveTeleportController && m_LeftControllerState.GetState() == ControllerStates.Teleport) || (!m_LatestActiveTeleportController && !m_LeftTeleportDeactivated)))
+                {
+                    m_LeftControllerState.SetState(ControllerStates.Select);
+                    m_LeftTeleportDeactivated = true;
+                }
             }
             else
             {
