@@ -1,0 +1,7 @@
+# Set the default behavior, in case people don't have core.autocrlf set.
+* text=auto
+
+# These are serialized by Unity and have LF line endings.
+*.asset text eol=lf
+*.prefab text eol=lf
+*.unity text eol=lf
