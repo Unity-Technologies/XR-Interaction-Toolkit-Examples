@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Experimental.XR;
+﻿using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
 [RequireComponent(typeof(XRGrabInteractable))]
@@ -23,7 +20,7 @@ public class BubbleGun : MonoBehaviour
     {
         m_InteractableBase = GetComponent<XRGrabInteractable>();
         m_Animator = GetComponent<Animator>();
-        m_InteractableBase.onSelectExit.AddListener(DroppedGun);
+        m_InteractableBase.onSelectExited.AddListener(DroppedGun);
         m_InteractableBase.onActivate.AddListener(TriggerPulled);
         m_InteractableBase.onDeactivate.AddListener(TriggerReleased);
     }

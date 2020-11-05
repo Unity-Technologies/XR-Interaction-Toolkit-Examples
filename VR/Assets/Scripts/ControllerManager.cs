@@ -298,21 +298,17 @@ public class ControllerManager : MonoBehaviour
         if (m_LeftController.isValid)
         {
             bool activated = false;
-            for(int i = 0; i < m_ActivationButtons.Count; i++)
+            foreach (var button in m_ActivationButtons)
             {
-                m_LeftController.IsPressed(m_ActivationButtons[i], out bool value);
+                m_LeftController.IsPressed(button, out bool value);
                 activated |= value;
             }
 
-            bool deactivated = false;
-            for (int i = 0; i < m_DeactivationButtons.Count; i++)
+            foreach (var button in m_DeactivationButtons)
             {
-                m_LeftController.IsPressed(m_DeactivationButtons[i], out bool value);
+                m_LeftController.IsPressed(button, out bool value);
                 m_LeftTeleportDeactivated |= value;
             }
-
-            if (deactivated)
-                m_LeftTeleportDeactivated = true;
 
             // if we're pressing the activation buttons, we transition to Teleport
             if (activated && !m_LeftTeleportDeactivated)
@@ -332,21 +328,17 @@ public class ControllerManager : MonoBehaviour
         if (m_RightController.isValid)
         {
             bool activated = false;
-            for (int i = 0; i < m_ActivationButtons.Count; i++)
+            foreach (var button in m_ActivationButtons)
             {
-                m_RightController.IsPressed(m_ActivationButtons[i], out bool value);
+                m_RightController.IsPressed(button, out bool value);
                 activated |= value;
             }
 
-            bool deactivated = false;
-            for (int i = 0; i < m_DeactivationButtons.Count; i++)
+            foreach (var button in m_DeactivationButtons)
             {
-                m_RightController.IsPressed(m_DeactivationButtons[i], out bool value);
-                deactivated |= value;
+                m_RightController.IsPressed(button, out bool value);
+                m_RightTeleportDeactivated |= value;
             }
-
-            if (deactivated)
-                m_RightTeleportDeactivated = true;
 
             if (activated && !m_RightTeleportDeactivated)
             {
