@@ -50,6 +50,13 @@ We are not accepting pull requests at this time.
 
 If using VR, make sure the Game view has focus (required for XR input currently) by clicking it with your mouse. A **Lock Input to Game View** option is available in the [Input Debugger](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/manual/Debugging.html#input-debugger) window (**Window &gt; Analysis &gt; Input Debugger**). Enabling this option forces input to continue processing even when the Game view does not have focus.
 
+As an alternative you can use Unity's package manager in order to import the examples in your project (for now it is available only for the VR examples), following the steps below:
+
+* Navigate to the `Packages` directory of your project.
+* Adjust the [project manifest file][Project-Manifest] `manifest.json` in a text editor.
+  * Add `"com.unity.xr.interaction.examples": "https://github.com/Unity-Technologies/XR-Interaction-Toolkit-Examples.git?path=/VR/Assets"` to `dependencies`.
+* Switch back to the Unity software and wait for it to finish importing the added package.
+
 ## Project overview
 
 This repository contains two different example Unity projects, one with a focus on a Virtual Reality ([VR](#vr)) experience, and another with a focus on an Augmented Reality ([AR](#ar)) experience for mobile.
