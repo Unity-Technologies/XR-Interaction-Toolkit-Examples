@@ -460,40 +460,62 @@ MonoBehaviour:
     m_Bits: 4294967295
   m_AttachTransform: {fileID: 0}
   m_StartingSelectedInteractable: {fileID: 0}
-  m_OnHoverEnter:
+  m_HoverEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverExit:
+  m_HoverExited:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEnter:
+  m_SelectEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExit:
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectExited:
     m_PersistentCalls:
       m_Calls: []
   m_SelectActionTrigger: 1
   m_HideControllerOnSelect: 0
-  m_PlayAudioClipOnSelectEnter: 0
-  m_AudioClipForOnSelectEnter: {fileID: 0}
-  m_PlayAudioClipOnSelectExit: 0
-  m_AudioClipForOnSelectExit: {fileID: 0}
-  m_PlayAudioClipOnHoverEnter: 0
-  m_AudioClipForOnHoverEnter: {fileID: 0}
-  m_PlayAudioClipOnHoverExit: 0
-  m_AudioClipForOnHoverExit: {fileID: 0}
-  m_PlayHapticsOnSelectEnter: 0
+  m_PlayAudioClipOnSelectEntered: 0
+  m_AudioClipForOnSelectEntered: {fileID: 0}
+  m_PlayAudioClipOnSelectExited: 0
+  m_AudioClipForOnSelectExited: {fileID: 0}
+  m_PlayAudioClipOnSelectCanceled: 0
+  m_AudioClipForOnSelectCanceled: {fileID: 0}
+  m_PlayAudioClipOnHoverEntered: 0
+  m_AudioClipForOnHoverEntered: {fileID: 0}
+  m_PlayAudioClipOnHoverExited: 0
+  m_AudioClipForOnHoverExited: {fileID: 0}
+  m_PlayAudioClipOnHoverCanceled: 0
+  m_AudioClipForOnHoverCanceled: {fileID: 0}
+  m_PlayHapticsOnSelectEntered: 0
   m_HapticSelectEnterIntensity: 0
   m_HapticSelectEnterDuration: 0
-  m_PlayHapticsOnSelectExit: 0
+  m_PlayHapticsOnSelectExited: 0
   m_HapticSelectExitIntensity: 0
   m_HapticSelectExitDuration: 0
-  m_PlayHapticsOnHoverEnter: 0
+  m_PlayHapticsOnSelectCanceled: 0
+  m_HapticSelectCancelIntensity: 0
+  m_HapticSelectCancelDuration: 0
+  m_PlayHapticsOnHoverEntered: 0
   m_HapticHoverEnterIntensity: 0
   m_HapticHoverEnterDuration: 0
-  m_PlayHapticsOnHoverExit: 0
+  m_PlayHapticsOnHoverExited: 0
   m_HapticHoverExitIntensity: 0
   m_HapticHoverExitDuration: 0
+  m_PlayHapticsOnHoverCanceled: 0
+  m_HapticHoverCancelIntensity: 0
+  m_HapticHoverCancelDuration: 0
   m_LineType: 0
   m_MaxRaycastDistance: 30
   m_ReferenceFrame: {fileID: 0}
@@ -540,8 +562,6 @@ MonoBehaviour:
   m_AnimateModel: 0
   m_ModelSelectTransition: 
   m_ModelDeSelectTransition: 
-  m_AnchorControlDeadzone: 0.75
-  m_AnchorControlOffAxisDeadzone: 0.3
   m_ControllerNode: 4
   m_SelectUsage: 3
   m_ActivateUsage: 2
@@ -912,40 +932,62 @@ MonoBehaviour:
     m_Bits: 4294967295
   m_AttachTransform: {fileID: 0}
   m_StartingSelectedInteractable: {fileID: 0}
-  m_OnHoverEnter:
+  m_HoverEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverExit:
+  m_HoverExited:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEnter:
+  m_SelectEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExit:
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectExited:
     m_PersistentCalls:
       m_Calls: []
   m_SelectActionTrigger: 1
   m_HideControllerOnSelect: 0
-  m_PlayAudioClipOnSelectEnter: 0
-  m_AudioClipForOnSelectEnter: {fileID: 0}
-  m_PlayAudioClipOnSelectExit: 0
-  m_AudioClipForOnSelectExit: {fileID: 0}
-  m_PlayAudioClipOnHoverEnter: 0
-  m_AudioClipForOnHoverEnter: {fileID: 0}
-  m_PlayAudioClipOnHoverExit: 0
-  m_AudioClipForOnHoverExit: {fileID: 0}
-  m_PlayHapticsOnSelectEnter: 0
+  m_PlayAudioClipOnSelectEntered: 0
+  m_AudioClipForOnSelectEntered: {fileID: 0}
+  m_PlayAudioClipOnSelectExited: 0
+  m_AudioClipForOnSelectExited: {fileID: 0}
+  m_PlayAudioClipOnSelectCanceled: 0
+  m_AudioClipForOnSelectCanceled: {fileID: 0}
+  m_PlayAudioClipOnHoverEntered: 0
+  m_AudioClipForOnHoverEntered: {fileID: 0}
+  m_PlayAudioClipOnHoverExited: 0
+  m_AudioClipForOnHoverExited: {fileID: 0}
+  m_PlayAudioClipOnHoverCanceled: 0
+  m_AudioClipForOnHoverCanceled: {fileID: 0}
+  m_PlayHapticsOnSelectEntered: 0
   m_HapticSelectEnterIntensity: 0
   m_HapticSelectEnterDuration: 0
-  m_PlayHapticsOnSelectExit: 0
+  m_PlayHapticsOnSelectExited: 0
   m_HapticSelectExitIntensity: 0
   m_HapticSelectExitDuration: 0
-  m_PlayHapticsOnHoverEnter: 0
+  m_PlayHapticsOnSelectCanceled: 0
+  m_HapticSelectCancelIntensity: 0
+  m_HapticSelectCancelDuration: 0
+  m_PlayHapticsOnHoverEntered: 0
   m_HapticHoverEnterIntensity: 0
   m_HapticHoverEnterDuration: 0
-  m_PlayHapticsOnHoverExit: 0
+  m_PlayHapticsOnHoverExited: 0
   m_HapticHoverExitIntensity: 0
   m_HapticHoverExitDuration: 0
+  m_PlayHapticsOnHoverCanceled: 0
+  m_HapticHoverCancelIntensity: 0
+  m_HapticHoverCancelDuration: 0
   m_LineType: 0
   m_MaxRaycastDistance: 30
   m_ReferenceFrame: {fileID: 0}
@@ -992,8 +1034,6 @@ MonoBehaviour:
   m_AnimateModel: 0
   m_ModelSelectTransition: 
   m_ModelDeSelectTransition: 
-  m_AnchorControlDeadzone: 0.75
-  m_AnchorControlOffAxisDeadzone: 0.3
   m_ControllerNode: 5
   m_SelectUsage: 3
   m_ActivateUsage: 2
@@ -1167,6 +1207,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8727182960119839637, guid: 024bd816ca03dad4c906465a400b16d0,
         type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8727182960119839637, guid: 024bd816ca03dad4c906465a400b16d0,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1182,6 +1227,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8727182960119839637, guid: 024bd816ca03dad4c906465a400b16d0,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8727182960119839637, guid: 024bd816ca03dad4c906465a400b16d0,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: -0
       objectReference: {fileID: 0}
@@ -1194,16 +1244,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8727182960119839637, guid: 024bd816ca03dad4c906465a400b16d0,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8727182960119839637, guid: 024bd816ca03dad4c906465a400b16d0,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8727182960119839637, guid: 024bd816ca03dad4c906465a400b16d0,
         type: 3}
@@ -1301,6 +1341,51 @@ PrefabInstance:
       objectReference: {fileID: 963194227}
     - target: {fileID: 2180233792799256650, guid: d8fe685edbbcdde42a59c34dc04d504e,
         type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2180233792799256650, guid: d8fe685edbbcdde42a59c34dc04d504e,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2180233792799256650, guid: d8fe685edbbcdde42a59c34dc04d504e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2180233792799256650, guid: d8fe685edbbcdde42a59c34dc04d504e,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2180233792799256650, guid: d8fe685edbbcdde42a59c34dc04d504e,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2180233792799256650, guid: d8fe685edbbcdde42a59c34dc04d504e,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2180233792799256650, guid: d8fe685edbbcdde42a59c34dc04d504e,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2180233792799256650, guid: d8fe685edbbcdde42a59c34dc04d504e,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 160
+      objectReference: {fileID: 0}
+    - target: {fileID: 2180233792799256650, guid: d8fe685edbbcdde42a59c34dc04d504e,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 2180233792799256650, guid: d8fe685edbbcdde42a59c34dc04d504e,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1313,6 +1398,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 249
+      objectReference: {fileID: 0}
+    - target: {fileID: 2180233792799256650, guid: d8fe685edbbcdde42a59c34dc04d504e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2180233792799256650, guid: d8fe685edbbcdde42a59c34dc04d504e,
         type: 3}
@@ -1331,13 +1421,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2180233792799256650, guid: d8fe685edbbcdde42a59c34dc04d504e,
         type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
+      propertyPath: m_AnchoredPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2180233792799256650, guid: d8fe685edbbcdde42a59c34dc04d504e,
         type: 3}
-      propertyPath: m_RootOrder
-      value: 0
+      propertyPath: m_AnchoredPosition.y
+      value: 49.2
       objectReference: {fileID: 0}
     - target: {fileID: 2180233792799256650, guid: d8fe685edbbcdde42a59c34dc04d504e,
         type: 3}
@@ -1354,56 +1444,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2180233792799256650, guid: d8fe685edbbcdde42a59c34dc04d504e,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2180233792799256650, guid: d8fe685edbbcdde42a59c34dc04d504e,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 49.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2180233792799256650, guid: d8fe685edbbcdde42a59c34dc04d504e,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 160
-      objectReference: {fileID: 0}
-    - target: {fileID: 2180233792799256650, guid: d8fe685edbbcdde42a59c34dc04d504e,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 2180233792799256650, guid: d8fe685edbbcdde42a59c34dc04d504e,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2180233792799256650, guid: d8fe685edbbcdde42a59c34dc04d504e,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2180233792799256650, guid: d8fe685edbbcdde42a59c34dc04d504e,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2180233792799256650, guid: d8fe685edbbcdde42a59c34dc04d504e,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2180233792799256650, guid: d8fe685edbbcdde42a59c34dc04d504e,
-        type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2180233792799256650, guid: d8fe685edbbcdde42a59c34dc04d504e,
-        type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 2180233792799256654, guid: d8fe685edbbcdde42a59c34dc04d504e,
         type: 3}
       propertyPath: m_Name
@@ -1411,18 +1451,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2180233793055793631, guid: d8fe685edbbcdde42a59c34dc04d504e,
         type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 183
-      objectReference: {fileID: 0}
-    - target: {fileID: 2180233793055793631, guid: d8fe685edbbcdde42a59c34dc04d504e,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 32
-      objectReference: {fileID: 0}
-    - target: {fileID: 2180233793055793631, guid: d8fe685edbbcdde42a59c34dc04d504e,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 31
+      propertyPath: m_text
+      value: "Welcome to XR Interaction Toolkit examples! \n\nThis is a basic scene
+        that shows how to set up device tracking. Look around in your VR headset
+        and identify the tracked hand controllers."
       objectReference: {fileID: 0}
     - target: {fileID: 2180233793055793631, guid: d8fe685edbbcdde42a59c34dc04d504e,
         type: 3}
@@ -1436,10 +1468,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2180233793055793631, guid: d8fe685edbbcdde42a59c34dc04d504e,
         type: 3}
-      propertyPath: m_text
-      value: "Welcome to XR Interaction Toolkit examples! \n\nThis is a basic scene
-        that shows how to set up device tracking. Look around in your VR headset
-        and identify the tracked hand controllers."
+      propertyPath: m_textInfo.wordCount
+      value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 2180233793055793631, guid: d8fe685edbbcdde42a59c34dc04d504e,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 2180233793055793631, guid: d8fe685edbbcdde42a59c34dc04d504e,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 183
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8fe685edbbcdde42a59c34dc04d504e, type: 3}
@@ -1458,6 +1498,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2716043965479607873, guid: 18acfc6d6f07a46429046e9df3790d5b,
         type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2716043965479607873, guid: 18acfc6d6f07a46429046e9df3790d5b,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1473,6 +1518,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2716043965479607873, guid: 18acfc6d6f07a46429046e9df3790d5b,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2716043965479607873, guid: 18acfc6d6f07a46429046e9df3790d5b,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: -0
       objectReference: {fileID: 0}
@@ -1485,16 +1535,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2716043965479607873, guid: 18acfc6d6f07a46429046e9df3790d5b,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2716043965479607873, guid: 18acfc6d6f07a46429046e9df3790d5b,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2716043965479607873, guid: 18acfc6d6f07a46429046e9df3790d5b,
         type: 3}
