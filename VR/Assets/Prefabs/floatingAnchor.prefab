@@ -60,11 +60,10 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -262,6 +261,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -296,9 +296,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: 6692997244113389540, guid: c3d9c381bf9aaa04288d35ed2553aa4b, type: 3}
 --- !u!1 &4902493317216794447
 GameObject:
@@ -391,11 +391,10 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.9811321, g: 0.9765041, b: 0.9765041, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 20
@@ -465,6 +464,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -499,9 +499,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -9209415924096165318, guid: c3d9c381bf9aaa04288d35ed2553aa4b, type: 3}
 --- !u!1 &8793205819567753922
 GameObject:
@@ -570,7 +570,32 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_OnFirstHoverEnter:
+  m_CustomReticle: {fileID: 0}
+  m_FirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Activated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Deactivated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4902493317216794447}
@@ -584,19 +609,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 1
-    m_TypeName: UnityEngine.XR.Interaction.XRInteractableEvent, Unity.XR.Interaction,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_OnHoverEnter:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.XR.Interaction.XRInteractableEvent, Unity.XR.Interaction,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_OnHoverExit:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.XR.Interaction.XRInteractableEvent, Unity.XR.Interaction,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_OnLastHoverExit:
+  m_OnLastHoverExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4902493317216794447}
@@ -610,21 +623,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
-    m_TypeName: UnityEngine.XR.Interaction.XRInteractableEvent, Unity.XR.Interaction,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_OnSelectEnter:
+  m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.XR.Interaction.XRInteractableEvent, Unity.XR.Interaction,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_OnSelectExit:
+  m_OnHoverExited:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.XR.Interaction.XRInteractableEvent, Unity.XR.Interaction,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_OnSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
+    m_PersistentCalls:
+      m_Calls: []
   m_OnActivate:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.XR.Interaction.XRInteractableEvent, Unity.XR.Interaction,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_CustomReticle: {fileID: 0}
+  m_OnDeactivate:
+    m_PersistentCalls:
+      m_Calls: []

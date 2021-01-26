@@ -1,44 +1,110 @@
 fileFormatVersion: 2
 guid: 47616bd0cda748d4cbedcfc908506b9d
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: drywall_panel
-    100002: ground
-    100004: OSB_Panel
-    100006: stud_frame
-    100008: stud_pile
-    100010: //RootNode
-    400000: drywall_panel
-    400002: ground
-    400004: OSB_Panel
-    400006: stud_frame
-    400008: stud_pile
-    400010: //RootNode
-    2100000: mat_wood_Plywood
-    2100002: mat_concrete_cement
-    2100004: nails
-    2100006: drywall_painted
-    2100008: drywall
-    2100010: mat_wood_OSB
-    2300000: drywall_panel
-    2300002: ground
-    2300004: OSB_Panel
-    2300006: stud_frame
-    2300008: stud_pile
-    3300000: drywall_panel
-    3300002: ground
-    3300004: OSB_Panel
-    3300006: stud_frame
-    3300008: stud_pile
-    4300000: stud_pile
-    4300002: ground
-    4300004: drywall_panel
-    4300006: OSB_Panel
-    4300008: stud_frame
+  serializedVersion: 19301
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: drywall_panel
+  - first:
+      1: 100002
+    second: ground
+  - first:
+      1: 100004
+    second: OSB_Panel
+  - first:
+      1: 100006
+    second: stud_frame
+  - first:
+      1: 100008
+    second: stud_pile
+  - first:
+      1: 100010
+    second: //RootNode
+  - first:
+      4: 400000
+    second: drywall_panel
+  - first:
+      4: 400002
+    second: ground
+  - first:
+      4: 400004
+    second: OSB_Panel
+  - first:
+      4: 400006
+    second: stud_frame
+  - first:
+      4: 400008
+    second: stud_pile
+  - first:
+      4: 400010
+    second: //RootNode
+  - first:
+      21: 2100000
+    second: mat_wood_Plywood
+  - first:
+      21: 2100002
+    second: mat_concrete_cement
+  - first:
+      21: 2100004
+    second: nails
+  - first:
+      21: 2100006
+    second: drywall_painted
+  - first:
+      21: 2100008
+    second: drywall
+  - first:
+      21: 2100010
+    second: mat_wood_OSB
+  - first:
+      23: 2300000
+    second: drywall_panel
+  - first:
+      23: 2300002
+    second: ground
+  - first:
+      23: 2300004
+    second: OSB_Panel
+  - first:
+      23: 2300006
+    second: stud_frame
+  - first:
+      23: 2300008
+    second: stud_pile
+  - first:
+      33: 3300000
+    second: drywall_panel
+  - first:
+      33: 3300002
+    second: ground
+  - first:
+      33: 3300004
+    second: OSB_Panel
+  - first:
+      33: 3300006
+    second: stud_frame
+  - first:
+      33: 3300008
+    second: stud_pile
+  - first:
+      43: 4300000
+    second: stud_pile
+  - first:
+      43: 4300002
+    second: ground
+  - first:
+      43: 4300004
+    second: drywall_panel
+  - first:
+      43: 4300006
+    second: OSB_Panel
+  - first:
+      43: 4300008
+    second: stud_frame
   externalObjects: {}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -70,34 +136,41 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 0
     importCameras: 0
     importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 0
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -107,14 +180,16 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

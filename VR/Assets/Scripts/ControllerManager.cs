@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -10,17 +9,17 @@ public class ControllerManager : MonoBehaviour
     // Slightly after the default, so that any actions such as release or grab can be processed *before* we switch controllers.
     public const int kControllerManagerUpdateOrder = 10;
 
-    InputDevice m_RightController;
-    InputDevice m_LeftController;
-
     [SerializeField]
     [Tooltip("The buttons on the controller that will trigger a transition to the Teleport Controller.")]
     List<InputHelpers.Button> m_ActivationButtons = new List<InputHelpers.Button>();
     /// <summary>
     /// The buttons on the controller that will trigger a transition to the Teleport Controller.
     /// </summary>
-    public List<InputHelpers.Button> activationButtons { get { return m_ActivationButtons; } set { m_ActivationButtons = value; } }
-
+    public List<InputHelpers.Button> activationButtons
+    {
+        get => m_ActivationButtons;
+        set => m_ActivationButtons = value;
+    }
 
     [SerializeField]
     [Tooltip("The buttons on the controller that will force a deactivation of the teleport option.")]
@@ -28,7 +27,11 @@ public class ControllerManager : MonoBehaviour
     /// <summary>
     /// The buttons on the controller that will trigger a transition to the Teleport Controller.
     /// </summary>
-    public List<InputHelpers.Button> deactivationButtons { get { return m_DeactivationButtons; } set { m_DeactivationButtons = value; } }
+    public List<InputHelpers.Button> deactivationButtons
+    {
+        get => m_DeactivationButtons;
+        set => m_DeactivationButtons = value;
+    }
 
     [SerializeField]
     [Tooltip("The Game Object which represents the left hand for normal interaction purposes.")]
@@ -36,7 +39,11 @@ public class ControllerManager : MonoBehaviour
     /// <summary>
     /// The Game Object which represents the left hand for normal interaction purposes.
     /// </summary>
-    public GameObject leftBaseController {  get { return m_LeftBaseController;  } set { m_LeftBaseController = value; } }
+    public GameObject leftBaseController
+    {
+        get => m_LeftBaseController;
+        set => m_LeftBaseController = value;
+    }
 
     [SerializeField]
     [Tooltip("The Game Object which represents the left hand when teleporting.")]
@@ -44,7 +51,11 @@ public class ControllerManager : MonoBehaviour
     /// <summary>
     /// The Game Object which represents the left hand when teleporting.
     /// </summary>
-    public GameObject leftTeleportController { get { return m_LeftTeleportController; } set { m_LeftTeleportController = value; } }
+    public GameObject leftTeleportController
+    {
+        get => m_LeftTeleportController;
+        set => m_LeftTeleportController = value;
+    }
 
     [SerializeField]
     [Tooltip("The Game Object which represents the right hand for normal interaction purposes.")]
@@ -52,7 +63,11 @@ public class ControllerManager : MonoBehaviour
     /// <summary>
     /// The Game Object which represents the right hand for normal interaction purposes.
     /// </summary>
-    public GameObject rightBaseController { get { return m_RightBaseController; } set { m_RightBaseController = value; } }
+    public GameObject rightBaseController
+    {
+        get => m_RightBaseController;
+        set => m_RightBaseController = value;
+    }
 
     [SerializeField]
     [Tooltip("The Game Object which represents the right hand when teleporting.")]
@@ -60,10 +75,20 @@ public class ControllerManager : MonoBehaviour
     /// <summary>
     /// The Game Object which represents the right hand when teleporting.
     /// </summary>
-    public GameObject rightTeleportController { get { return m_RightTeleportController; } set { m_RightTeleportController = value; } }
+    public GameObject rightTeleportController
+    {
+        get => m_RightTeleportController;
+        set => m_RightTeleportController = value;
+    }
 
-    bool m_LeftTeleportDeactivated = false;
-    bool m_RightTeleportDeactivated = false;
+    InputDevice m_RightController;
+    InputDevice m_LeftController;
+
+    bool m_LeftTeleportDeactivated;
+    bool m_RightTeleportDeactivated;
+
+    ControllerState m_RightControllerState;
+    ControllerState m_LeftControllerState;
 
     /// <summary>
     /// A simple state machine which manages the three pieces of content that are used to represent
@@ -188,10 +213,12 @@ public class ControllerManager : MonoBehaviour
         /// </summary>
         public void ClearAll()
         {
-            if(m_Interactors == null)
+            m_State = ControllerStates.MAX;
+
+            if (m_Interactors == null)
                 return;
 
-            for(int i = 0; i < (int)ControllerStates.MAX; ++i)
+            for (var i = 0; i < (int)ControllerStates.MAX; ++i)
             {
                 m_Interactors[i].Leave();
             }
@@ -204,7 +231,7 @@ public class ControllerManager : MonoBehaviour
         /// <param name="parentGamObject">The game object that represents the interactor for that state.</param>
         public void SetGameObject(ControllerStates state, GameObject parentGamObject)
         {
-            if ((state == ControllerStates.MAX) || (m_Interactors == null))
+            if (state == ControllerStates.MAX || m_Interactors == null)
                 return;
 
             m_Interactors[(int)state].Attach(parentGamObject);
@@ -220,24 +247,18 @@ public class ControllerManager : MonoBehaviour
             {
                 return;
             }
-            else
-            {
-                if (m_State != ControllerStates.MAX)
-                {
-                    m_Interactors[(int)m_State].Leave();                    
-                }
 
-                m_State = nextState;           
-                m_Interactors[(int)m_State].Enter();           
+            if (m_State != ControllerStates.MAX)
+            {
+                m_Interactors[(int)m_State].Leave();                    
             }
+
+            m_State = nextState;           
+            m_Interactors[(int)m_State].Enter();
         }
     }
 
-    ControllerState m_RightControllerState;
-    ControllerState m_LeftControllerState;
-
-
-    void OnEnable()
+    protected void OnEnable()
     {
         m_LeftTeleportDeactivated = false;
         m_RightTeleportDeactivated = false;
@@ -255,13 +276,13 @@ public class ControllerManager : MonoBehaviour
         m_RightControllerState.ClearAll();
 
         InputDevices.deviceConnected += RegisterDevices;
-        List<InputDevice> devices = new List<InputDevice>();
+        var devices = new List<InputDevice>();
         InputDevices.GetDevices(devices);
-        for (int i = 0; i < devices.Count; i++)
-            RegisterDevices(devices[i]);
+        foreach (var device in devices)
+            RegisterDevices(device);
     }
 
-    void OnDisable()
+    protected void OnDisable()
     {
         InputDevices.deviceConnected -= RegisterDevices;
     }
@@ -293,20 +314,20 @@ public class ControllerManager : MonoBehaviour
         }
     }
 
-    void Update()
+    protected void Update()
     {
         if (m_LeftController.isValid)
         {
-            bool activated = false;
+            var activated = false;
             foreach (var button in m_ActivationButtons)
             {
-                m_LeftController.IsPressed(button, out bool value);
+                m_LeftController.IsPressed(button, out var value);
                 activated |= value;
             }
 
             foreach (var button in m_DeactivationButtons)
             {
-                m_LeftController.IsPressed(button, out bool value);
+                m_LeftController.IsPressed(button, out var value);
                 m_LeftTeleportDeactivated |= value;
             }
 
@@ -327,16 +348,16 @@ public class ControllerManager : MonoBehaviour
 
         if (m_RightController.isValid)
         {
-            bool activated = false;
+            var activated = false;
             foreach (var button in m_ActivationButtons)
             {
-                m_RightController.IsPressed(button, out bool value);
+                m_RightController.IsPressed(button, out var value);
                 activated |= value;
             }
 
             foreach (var button in m_DeactivationButtons)
             {
-                m_RightController.IsPressed(button, out bool value);
+                m_RightController.IsPressed(button, out var value);
                 m_RightTeleportDeactivated |= value;
             }
 

@@ -17,34 +17,34 @@ public class ComplexCube : MonoBehaviour
         m_GrabInteractable = GetComponent<XRGrabInteractable>();
         m_MeshRenderer = GetComponent<MeshRenderer>();
         
-        m_GrabInteractable.onFirstHoverEntered.AddListener(OnFirstHoverEntered);
-        m_GrabInteractable.onLastHoverExited.AddListener(OnLastHoverExited);
-        m_GrabInteractable.onSelectEntered.AddListener(OnSelectEntered);
-        m_GrabInteractable.onSelectExited.AddListener(OnSelectExited);
+        m_GrabInteractable.firstHoverEntered.AddListener(OnFirstHoverEntered);
+        m_GrabInteractable.lastHoverExited.AddListener(OnLastHoverExited);
+        m_GrabInteractable.selectEntered.AddListener(OnSelectEntered);
+        m_GrabInteractable.selectExited.AddListener(OnSelectExited);
     }
 
     
     protected void OnDisable()
     {
-        m_GrabInteractable.onFirstHoverEntered.RemoveListener(OnFirstHoverEntered);
-        m_GrabInteractable.onLastHoverExited.RemoveListener(OnLastHoverExited);
-        m_GrabInteractable.onSelectEntered.RemoveListener(OnSelectEntered);
-        m_GrabInteractable.onSelectExited.RemoveListener(OnSelectExited);
+        m_GrabInteractable.firstHoverEntered.RemoveListener(OnFirstHoverEntered);
+        m_GrabInteractable.lastHoverExited.RemoveListener(OnLastHoverExited);
+        m_GrabInteractable.selectEntered.RemoveListener(OnSelectEntered);
+        m_GrabInteractable.selectExited.RemoveListener(OnSelectExited);
     }
 
-    protected virtual void OnSelectEntered(XRBaseInteractor interactor)
+    protected virtual void OnSelectEntered(SelectEnterEventArgs args)
     {
         m_MeshRenderer.material.color = s_UnityCyan;
         m_Held = true;
     }
 
-    protected virtual void OnSelectExited(XRBaseInteractor interactor)
+    protected virtual void OnSelectExited(SelectExitEventArgs args)
     {
         m_MeshRenderer.material.color = Color.white;
         m_Held = false;
     }
 
-    protected virtual void OnLastHoverExited(XRBaseInteractor interactor)
+    protected virtual void OnLastHoverExited(HoverExitEventArgs args)
     {
         if (!m_Held)
         {
@@ -52,7 +52,7 @@ public class ComplexCube : MonoBehaviour
         }
     }
 
-    protected virtual void OnFirstHoverEntered(XRBaseInteractor interactor)
+    protected virtual void OnFirstHoverEntered(HoverEnterEventArgs args)
     {
         if (!m_Held)
         {

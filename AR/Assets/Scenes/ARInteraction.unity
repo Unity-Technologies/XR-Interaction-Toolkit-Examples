@@ -96,6 +96,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
+    m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -316,26 +317,30 @@ MonoBehaviour:
     m_Bits: 4294967295
   m_AttachTransform: {fileID: 0}
   m_StartingSelectedInteractable: {fileID: 0}
-  m_OnHoverEnter:
+  m_HoverEntered:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.XR.Interaction.Toolkit.XRInteractorEvent, Unity.XR.Interaction.Toolkit,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_OnHoverExit:
+  m_HoverExited:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.XR.Interaction.Toolkit.XRInteractorEvent, Unity.XR.Interaction.Toolkit,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_OnSelectEnter:
+  m_SelectEntered:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.XR.Interaction.Toolkit.XRInteractorEvent, Unity.XR.Interaction.Toolkit,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_OnSelectExit:
+  m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.XR.Interaction.Toolkit.XRInteractorEvent, Unity.XR.Interaction.Toolkit,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_OnHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &427002218
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,6 +373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AttemptUpdate: 1
+  m_MatchFrameRate: 1
 --- !u!4 &427002220
 Transform:
   m_ObjectHideFlags: 0
@@ -441,54 +447,66 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_OnFirstHoverEnter:
+  m_CustomReticle: {fileID: 0}
+  m_FirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.XR.Interaction.Toolkit.XRInteractableEvent, Unity.XR.Interaction.Toolkit,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_OnHoverEnter:
+  m_LastHoverExited:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.XR.Interaction.Toolkit.XRInteractableEvent, Unity.XR.Interaction.Toolkit,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_OnHoverExit:
+  m_HoverEntered:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.XR.Interaction.Toolkit.XRInteractableEvent, Unity.XR.Interaction.Toolkit,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_OnLastHoverExit:
+  m_HoverExited:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.XR.Interaction.Toolkit.XRInteractableEvent, Unity.XR.Interaction.Toolkit,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_OnSelectEnter:
+  m_SelectEntered:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.XR.Interaction.Toolkit.XRInteractableEvent, Unity.XR.Interaction.Toolkit,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_OnSelectExit:
+  m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.XR.Interaction.Toolkit.XRInteractableEvent, Unity.XR.Interaction.Toolkit,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Activated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Deactivated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnFirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnLastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
+    m_PersistentCalls:
+      m_Calls: []
   m_OnActivate:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.XR.Interaction.Toolkit.XRInteractableEvent, Unity.XR.Interaction.Toolkit,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.XR.Interaction.Toolkit.XRInteractableEvent, Unity.XR.Interaction.Toolkit,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_CustomReticle: {fileID: 0}
   m_PlacementPrefab: {fileID: 4085108242453859580, guid: ded51c8ee147a48818b28707c73de793,
     type: 3}
+  m_ObjectPlaced:
+    m_PersistentCalls:
+      m_Calls: []
   m_OnObjectPlaced:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.XR.Interaction.Toolkit.AR.ARObjectPlacedEvent, Unity.XR.Interaction.Toolkit,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!4 &433189028
 Transform:
   m_ObjectHideFlags: 0
@@ -528,8 +546,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1015722065}
   m_Enabled: 1
-  serializedVersion: 9
+  serializedVersion: 10
   m_Type: 1
+  m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
   m_Range: 10
@@ -698,9 +717,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &2013333497
 MeshRenderer:
@@ -716,6 +735,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
