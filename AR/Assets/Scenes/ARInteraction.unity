@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -341,6 +341,7 @@ MonoBehaviour:
   m_OnSelectExited:
     m_PersistentCalls:
       m_Calls: []
+  m_ARSessionOrigin: {fileID: 1335839534}
 --- !u!1 &427002218
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,8 +500,12 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  m_PlacementPrefab: {fileID: 4085108242453859580, guid: ded51c8ee147a48818b28707c73de793,
+  m_ARSessionOrigin: {fileID: 1335839534}
+  m_PlacementPrefab: {fileID: 5295117067104532748, guid: 1032d234f81c3401eb238fd7764ebe86,
     type: 3}
+  m_FallbackLayerMask:
+    serializedVersion: 2
+    m_Bits: 512
   m_ObjectPlaced:
     m_PersistentCalls:
       m_Calls: []

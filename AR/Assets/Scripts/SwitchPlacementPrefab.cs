@@ -1,61 +1,47 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit.AR;
 
+[RequireComponent(typeof(ARPlacementInteractable))]
 public class SwitchPlacementPrefab : MonoBehaviour
 {
-    public GameObject m_ChairPrefab;
-    public GameObject m_TablePrefab;
-    public GameObject m_KitchenChairPrefab;
-    public GameObject m_KitchenTable1Prefab;
-    public GameObject m_KitchenTable2Prefab;
-    public GameObject m_TVTablePrefab;
-    public ARPlacementInteractable m_PlacementInteractable;
-
-    public void SwapToChair()
+    [Tooltip("The list of objects that you can place.")]
+    [SerializeField]
+    List<GameObject> m_ObjectsToPlace;
+    public List<GameObject> objectsToPlace
     {
-        if (m_PlacementInteractable == null)
-            return;
-
-        m_PlacementInteractable.placementPrefab = m_ChairPrefab;
+        get => m_ObjectsToPlace;
+        set => m_ObjectsToPlace = value;
     }
 
-    public void SwapToTable()
+    [Tooltip("The drop down menu populated by the list of placeable objects.")]
+    [SerializeField]
+    Dropdown m_Dropdown;
+    public Dropdown dropdown
     {
-        if (m_PlacementInteractable == null)
-            return;
-
-        m_PlacementInteractable.placementPrefab = m_TablePrefab;
+        get => m_Dropdown;
+        set => m_Dropdown = value;
     }
-    
-    public void SwapToKitchenChair()
-    {
-        if (m_PlacementInteractable == null)
-            return;
 
-        m_PlacementInteractable.placementPrefab = m_KitchenChairPrefab;
+    ARPlacementInteractable m_PlacementInteractable;
+
+    protected void Awake()
+    {
+        m_PlacementInteractable = GetComponent<ARPlacementInteractable>();
+        m_Dropdown.ClearOptions();
+        foreach (var item in m_ObjectsToPlace)
+        {
+            var data = new Dropdown.OptionData();
+            data.text = item.name;
+            m_Dropdown.options.Add(data);
+        }
+
+        SwapPlacementObject();
     }
-    
-    public void SwapToKitchenTable1()
-    {
-        if (m_PlacementInteractable == null)
-            return;
 
-        m_PlacementInteractable.placementPrefab = m_KitchenTable1Prefab;
-    }
-    
-    public void SwapToKitchenTable2()
+    public void SwapPlacementObject()
     {
-        if (m_PlacementInteractable == null)
-            return;
-
-        m_PlacementInteractable.placementPrefab = m_KitchenTable2Prefab;
-    }
-    
-    public void SwapToTVTable()
-    {
-        if (m_PlacementInteractable == null)
-            return;
-
-        m_PlacementInteractable.placementPrefab = m_TVTablePrefab;
+        m_PlacementInteractable.placementPrefab = m_ObjectsToPlace[m_Dropdown.value];
     }
 }

@@ -43,10 +43,10 @@ We are not accepting pull requests at this time.
     1. In the **Projects** tab, click **Add**
     1. Browse to the AR or VR folder within your downloaded copy of this repository and click **Select Folder**
     1. Click the project which should now be added to the list to open the project
-1. Open the Scene at `Assets\Scenes\WorldInteractionDemo` by double clicking it in the Project window
-1. Configure the project for XR
+1. For the VR project, open the Scene at `Assets\Scenes\WorldInteractionDemo` by double clicking it in the Project window. For the AR project, open the Scene at `Assets\Scenes\ARInteraction`.
+1. Configure the VR project for XR devices
     1. From Unity’s main menu, go to **Edit &gt; Project Settings &gt; XR Plug-in Management**, and select the platform(s) you plan to deploy to
-1. To run the sample on a headset, go to **File &gt; Build Settings** and build the app. If you have a PC VR headset, you can also preview the app by connecting your device and clicking **Play (►)**
+1. To run the VR sample on a headset, go to **File &gt; Build Settings** and build the app. If you have a PC VR headset, you can also preview the app by connecting your device and clicking **Play (►)**
 
 If using VR, make sure the Game view has focus (required for XR input currently) by clicking it with your mouse. A **Lock Input to Game View** option is available in the [Input Debugger](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/manual/Debugging.html#input-debugger) window (**Window &gt; Analysis &gt; Input Debugger**). Enabling this option forces input to continue processing even when the Game view does not have focus.
 
@@ -84,10 +84,35 @@ The `LocomotionConfigurationMenu` script is used to present locomotion control s
 
 The Default Input Actions sample included with the XR Interaction Toolkit package is installed in this example project, which contains an Input Actions Asset with different locomotion control schemes. When used with the Locomotion Scheme Manager as configured in the Scene, this allows the player to swap between different input styles for locomotion, such as changing between snap-turning left and right, and smooth turning.
 
+#### Android/Oculus
+
+A modified Android manifest file is used to enable the Oculus system keyboard when an input field receives focus, an example of which is in the `WorldInteractionDemo` Scene. This was done by editing the generating `AndroidManifest.xml` file created by first opening **Edit > Project Settings > Player**, clicking the Android settings tab, and then under the Build header clicking to enable **Custom Main Manifest**. The following line was added to the `manifest` element:
+```xml
+<uses-feature android:name="oculus.software.overlay_keyboard" android:required="false"/>
+```
+
 ### AR
 
 This example project contains a Scene located in `Assets\Scenes`. The AR example project currently supports only mobile AR platforms. See the [ARKit documentation](https://docs.unity3d.com/Packages/com.unity.xr.arkit@2.1/manual/index.html) or the [ARCore documentation](https://docs.unity3d.com/Packages/com.unity.xr.arcore@2.1/manual/index.html) for more details on how to set up the project to deploy to either platform.
 
 |**Scene**|**Description**|
 |---|---|
-|`Scenes\ARInteraction`|<p>This scene shows how to set up a Gesture Interactor and a Placement Interactable for a mobile AR experience.</p><p>Place a cube onto a detected plane, and use gestures to move, scale and rotate the placed object. This demonstrates the functionality of `ARTranslationInteractable`, `ARRotationInteractable`, and `ARScaleInteractable` respectively. The scene also demonstrates how to use `ARScaleInteractable` to create selection visual effects such as the cube being highlighted when selected.</p>|
+|`Scenes\ARInteraction`|<p>This scene shows how to set up a Gesture Interactor and a Placement Interactable for a mobile AR experience.</p><p>Place a cube onto a detected plane, and use gestures to move, rotate, and scale the placed object. This demonstrates the functionality of `ARTranslationInteractable`, `ARRotationInteractable`, and `ARScaleInteractable` respectively. The scene also demonstrates how to use `ARSelectionInteractable` to create selection visual effects such as the cube being highlighted when selected.</p>|
+|`Scenes\ARInteraction_MultipleObjects`|<p>This scene is similiar to `ARInteraction` but it includes a sample script called `SwitchPlacementPrefab` which demonstrates how to place multiple different types of `GameObjects`.</p><p>Known Limitations: Taps on the dropdown UI when over a tracked plane will also place an object.</p>|
+
+### Android
+
+If you are deploying to Android, you must change a few build settings in order to build the app.
+
+#### Unity 2019.4
+
+1. Open a web browser and go to https://gradle.org/releases/
+2. Download **Gradle v5.6.4** (binary-only is fine) and unzip it into a location of your choosing.
+3. Go to **Edit > Preferences > External Tools**, then under the Android header uncheck **Gradle Installed with Unity**, then set the Gradle location to the location where you unzipped the download.
+
+Build files have already been modified in the AR example project to support building to Android 11. See [Build for Android 11](https://developers.google.com/ar/develop/unity/android-11-build#unity_20193_and_20194) for steps needed to build using Unity 2019.4 for a new project.
+
+#### Unity 2020.1 or newer
+
+1. Go to **Edit > Project Settings > Player** and click the Android settings tab.
+2. Click to expand **Publishing Settings**, then under the Build header uncheck **Custom Main Gradle Template** and **Custom Launcher Gradle Template**. Those modified build files are only necessary when using Unity 2019.4.
