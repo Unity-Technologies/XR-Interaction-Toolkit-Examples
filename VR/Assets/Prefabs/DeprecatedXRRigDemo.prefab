@@ -51,7 +51,8 @@ MonoBehaviour:
   m_EnableInputActions: 1
   m_ModelPrefab: {fileID: 1306640934352848695, guid: 902b196ba17fa284bae10bdc5878a72d,
     type: 3}
-  m_ModelTransform: {fileID: 1717954561063364409}
+  m_ModelParent: {fileID: 1717954561063364409}
+  m_Model: {fileID: 0}
   m_AnimateModel: 0
   m_ModelSelectTransition: 
   m_ModelDeSelectTransition: 
@@ -264,7 +265,8 @@ MonoBehaviour:
   m_EnableInputActions: 1
   m_ModelPrefab: {fileID: 1306640934352848695, guid: 902b196ba17fa284bae10bdc5878a72d,
     type: 3}
-  m_ModelTransform: {fileID: 1717954560623744797}
+  m_ModelParent: {fileID: 1717954560623744797}
+  m_Model: {fileID: 0}
   m_AnimateModel: 0
   m_ModelSelectTransition: 
   m_ModelDeSelectTransition: 
@@ -644,7 +646,8 @@ MonoBehaviour:
   m_EnableInputActions: 1
   m_ModelPrefab: {fileID: 1306640934352848695, guid: 902b196ba17fa284bae10bdc5878a72d,
     type: 3}
-  m_ModelTransform: {fileID: 1717954561962503726}
+  m_ModelParent: {fileID: 1717954561962503726}
+  m_Model: {fileID: 0}
   m_AnimateModel: 0
   m_ModelSelectTransition: 
   m_ModelDeSelectTransition: 
@@ -1051,7 +1054,8 @@ MonoBehaviour:
   m_EnableInputActions: 1
   m_ModelPrefab: {fileID: 1306640934352848695, guid: 902b196ba17fa284bae10bdc5878a72d,
     type: 3}
-  m_ModelTransform: {fileID: 1717954560542311230}
+  m_ModelParent: {fileID: 1717954560542311230}
+  m_Model: {fileID: 0}
   m_AnimateModel: 0
   m_ModelSelectTransition: 
   m_ModelDeSelectTransition: 
@@ -1403,7 +1407,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1717954561314460871}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 1.36144, z: -1.438}
+  m_LocalPosition: {x: -0, y: 1.36144, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1717954562053134906}
@@ -1465,9 +1469,10 @@ MonoBehaviour:
   m_RigBaseGameObject: {fileID: 1717954561456925282}
   m_CameraFloorOffsetObject: {fileID: 1717954561314460871}
   m_CameraGameObject: {fileID: 1717954562053134886}
-  m_TrackingOriginMode: 1
-  m_TrackingSpace: 3
+  m_RequestedTrackingOriginMode: 1
   m_CameraYOffset: 1.36144
+  m_TrackingSpace: 3
+  m_TrackingOriginMode: -2147483648
 --- !u!114 &1717954561456925285
 MonoBehaviour:
   m_ObjectHideFlags: 0
