@@ -240,6 +240,10 @@ MonoBehaviour:
   m_AttachTransform: {fileID: 7850607587320484629}
   m_AttachEaseInTime: 0.15
   m_MovementType: 2
+  m_VelocityDamping: 0.4
+  m_VelocityScale: 1
+  m_AngularVelocityDamping: 0.4
+  m_AngularVelocityScale: 0.95
   m_TrackPosition: 1
   m_SmoothPosition: 0
   m_SmoothPositionAmount: 5
@@ -269,6 +273,7 @@ MonoBehaviour:
   m_ThrowAngularVelocityScale: 1
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
+  m_AttachPointCompatibilityMode: 0
 --- !u!65 &306082267053725907
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -637,7 +642,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3373810049257776468}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.412, z: -0.175}
+  m_LocalPosition: {x: 0, y: 0.50841, z: -0.175}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4498450296475097182}
