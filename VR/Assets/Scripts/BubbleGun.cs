@@ -64,9 +64,4 @@ public class BubbleGun : MonoBehaviour
         m_TriggerHeldTime = 0f;
         m_BubbleParticleSystem.Stop();
     }
-
-    public void ShootEvent()
-    {
-        m_BubbleParticleSystem.Emit(1);
-    }
 }
