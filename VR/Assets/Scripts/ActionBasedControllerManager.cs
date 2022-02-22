@@ -5,6 +5,7 @@ using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
+using Object = UnityEngine.Object;
 
 /// <summary>
 /// Use this class to map input actions to each controller state (mode)
@@ -240,11 +241,11 @@ public class ActionBasedControllerManager : MonoBehaviour
 
     // Components of the controller to switch on and off for different states
     XRBaseController m_BaseController;
-    XRBaseInteractor m_BaseInteractor;
+    IXRSelectInteractor m_BaseInteractor;
     XRInteractorLineVisual m_BaseLineVisual;
 
     XRBaseController m_TeleportController;
-    XRBaseInteractor m_TeleportInteractor;
+    IXRInteractor m_TeleportInteractor;
     XRInteractorLineVisual m_TeleportLineVisual;
 
     protected void OnEnable()
@@ -337,11 +338,11 @@ public class ActionBasedControllerManager : MonoBehaviour
                 Debug.LogWarning($"Cannot find any {nameof(XRBaseController)} component on the Base Controller GameObject.", this);
         }
 
-        if (m_BaseInteractor == null)
+        if (m_BaseInteractor == null || m_BaseInteractor as Object == null)
         {
-            m_BaseInteractor = m_BaseControllerGameObject.GetComponent<XRBaseInteractor>();
-            if (m_BaseInteractor == null)
-                Debug.LogWarning($"Cannot find any {nameof(XRBaseInteractor)} component on the Base Controller GameObject.", this);
+            m_BaseInteractor = m_BaseControllerGameObject.GetComponent<IXRSelectInteractor>();
+            if (m_BaseInteractor == null || m_BaseInteractor as Object == null)
+                Debug.LogWarning($"Cannot find any {nameof(IXRSelectInteractor)} component on the Base Controller GameObject.", this);
         }
 
         // Only check the line visual component for RayInteractor, since DirectInteractor does not use the line visual component
@@ -394,8 +395,8 @@ public class ActionBasedControllerManager : MonoBehaviour
         if (m_BaseController != null)
             m_BaseController.enableInputActions = enable;
         
-        if (m_BaseInteractor != null)
-            m_BaseInteractor.enabled = enable;
+        if (m_BaseInteractor is Behaviour baseInteractorComponent && baseInteractorComponent != null)
+            baseInteractorComponent.enabled = enable;
         
         if (m_BaseInteractor is XRRayInteractor && m_BaseLineVisual != null)
             m_BaseLineVisual.enabled = enable;
@@ -415,8 +416,8 @@ public class ActionBasedControllerManager : MonoBehaviour
         if (m_TeleportController != null)
             m_TeleportController.enableInputActions = enable;
         
-        if (m_TeleportInteractor != null)
-            m_TeleportInteractor.enabled = enable;
+        if (m_TeleportInteractor is Behaviour teleportInteractorComponent && teleportInteractorComponent != null)
+            teleportInteractorComponent.enabled = enable;
     }
 
     void OnEnterSelectState(StateId previousStateId)
@@ -513,10 +514,10 @@ public class ActionBasedControllerManager : MonoBehaviour
             return;
         }
 
-        // Transition from Select state to Interact state when the interactor has a selectTarget
         FindBaseControllerComponents();
 
-        if (m_BaseInteractor.selectTarget != null)
+        // Transition from Select state to Interact state when the interactor has a selection
+        if (m_BaseInteractor.hasSelection)
             TransitionState(m_SelectState, m_InteractState);
     }
 
@@ -539,8 +540,8 @@ public class ActionBasedControllerManager : MonoBehaviour
 
     void OnUpdateInteractState()
     {
-        // Transition from Interact state to Select state when the base interactor no longer has a select target
-        if (m_BaseInteractor.selectTarget == null)
+        // Transition from Interact state to Select state when the interactor no longer has a selection
+        if (!m_BaseInteractor.hasSelection)
             TransitionState(m_InteractState, m_SelectState);
     }
 

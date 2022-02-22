@@ -1,62 +1,51 @@
 ﻿using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-[RequireComponent(typeof(XRGrabInteractable))]
+[RequireComponent(typeof(XRGrabInteractable), typeof(Renderer))]
 public class ComplexCube : MonoBehaviour
 {
-    XRGrabInteractable m_GrabInteractable;
-    MeshRenderer m_MeshRenderer;
+    XRBaseInteractable m_Interactable;
+    Renderer m_Renderer;
     
-    static Color s_UnityMagenta = new Color(0.929f, 0.094f, 0.278f);
-    static Color s_UnityCyan = new Color(0.019f, 0.733f, 0.827f);
-
-    bool m_Held;
+    static Color s_HoveredColor = new Color(0.929f, 0.094f, 0.278f);
+    static Color s_SelectedColor = new Color(0.019f, 0.733f, 0.827f);
 
     protected void OnEnable()
     {
-        m_GrabInteractable = GetComponent<XRGrabInteractable>();
-        m_MeshRenderer = GetComponent<MeshRenderer>();
+        m_Interactable = GetComponent<XRBaseInteractable>();
+        m_Renderer = GetComponent<Renderer>();
         
-        m_GrabInteractable.firstHoverEntered.AddListener(OnFirstHoverEntered);
-        m_GrabInteractable.lastHoverExited.AddListener(OnLastHoverExited);
-        m_GrabInteractable.selectEntered.AddListener(OnSelectEntered);
-        m_GrabInteractable.selectExited.AddListener(OnSelectExited);
-    }
+        m_Interactable.firstHoverEntered.AddListener(OnFirstHoverEntered);
+        m_Interactable.lastHoverExited.AddListener(OnLastHoverExited);
+        m_Interactable.firstSelectEntered.AddListener(OnFirstSelectEntered);
+        m_Interactable.lastSelectExited.AddListener(OnLastSelectExited);
 
+        UpdateColor();
+    }
     
     protected void OnDisable()
     {
-        m_GrabInteractable.firstHoverEntered.RemoveListener(OnFirstHoverEntered);
-        m_GrabInteractable.lastHoverExited.RemoveListener(OnLastHoverExited);
-        m_GrabInteractable.selectEntered.RemoveListener(OnSelectEntered);
-        m_GrabInteractable.selectExited.RemoveListener(OnSelectExited);
+        m_Interactable.firstHoverEntered.RemoveListener(OnFirstHoverEntered);
+        m_Interactable.lastHoverExited.RemoveListener(OnLastHoverExited);
+        m_Interactable.firstSelectEntered.RemoveListener(OnFirstSelectEntered);
+        m_Interactable.lastSelectExited.RemoveListener(OnLastSelectExited);
     }
 
-    protected virtual void OnSelectEntered(SelectEnterEventArgs args)
-    {
-        m_MeshRenderer.material.color = s_UnityCyan;
-        m_Held = true;
-    }
+    protected virtual void OnFirstHoverEntered(HoverEnterEventArgs args) => UpdateColor();
 
-    protected virtual void OnSelectExited(SelectExitEventArgs args)
-    {
-        m_MeshRenderer.material.color = Color.white;
-        m_Held = false;
-    }
+    protected virtual void OnLastHoverExited(HoverExitEventArgs args) => UpdateColor();
 
-    protected virtual void OnLastHoverExited(HoverExitEventArgs args)
-    {
-        if (!m_Held)
-        {
-            m_MeshRenderer.material.color = Color.white;
-        }
-    }
+    protected virtual void OnFirstSelectEntered(SelectEnterEventArgs args) => UpdateColor();
 
-    protected virtual void OnFirstHoverEntered(HoverEnterEventArgs args)
+    protected virtual void OnLastSelectExited(SelectExitEventArgs args) => UpdateColor();
+
+    protected void UpdateColor()
     {
-        if (!m_Held)
-        {
-            m_MeshRenderer.material.color = s_UnityMagenta;
-        }
+        var color = m_Interactable.isSelected
+            ? s_SelectedColor
+            : m_Interactable.isHovered
+                ? s_HoveredColor
+                : Color.white;
+        m_Renderer.material.color = color;
     }
 }
