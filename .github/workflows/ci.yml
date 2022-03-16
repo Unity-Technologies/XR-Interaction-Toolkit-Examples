@@ -1,0 +1,137 @@
+# CI for pull requests
+# https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-gradle?learn=continuous_integration&learnProduct=actions
+# Using gradle-build-action. See https://github.com/gradle/gradle-build-action
+
+name: CI
+
+on: [pull_request,workflow_dispatch]
+  
+#  push:
+#    branches:
+#      - 'build'
+#      #- 'releases/**'
+#      #- '!releases/**-alpha'
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      LICENSE: ${{ secrets.LICENSE }} #unity 2019 license 
+      LICENSE2: ${{ secrets.LICENSE2 }}
+      LICENSE2020: ${{ secrets.LICENSE_2020 }}
+      LICENSE2021: ${{ secrets.LICENSE_2021 }}
+      UPM_PACKAGE_CREDENTIAL_UPMCONFIG_TOML: ${{ secrets.UPM_PACKAGE_CREDENTIAL_UPMCONFIG_TOML }}
+    strategy:
+      matrix:
+        unity-version-matrix: [ 2020.3.30f1 ] 
+#        unity-version-matrix: [ 2019.4.36f1,2020.3.30f1, 2021.2.14f1 ] #,2020.3.30f1, 2021.2.14f1
+
+    steps:
+      - name: Checkout Passthrough Example
+        uses: actions/checkout@v2
+        with:
+          submodules: 'true'
+#not great, but let's also set up java so we can run sdkmanager. probably a way to avoid this.
+      #https://github.com/marketplace/actions/setup-unity
+      - name: Setup Unity
+        uses: kuler90/setup-unity@v1
+        with:
+          unity-version: ${{ matrix.unity-version-matrix }}
+          unity-modules: android
+          install-path: /opt/Unity
+#https://docs.unity3d.com/Manual/upm-config.html set up the upm config toml if we want to build using test pacakges
+      - name: Set up authentication for test packages
+        run: |
+          echo -n -e "$UPM_PACKAGE_CREDENTIAL_UPMCONFIG_TOML" > ~/.upmconfig.toml
+      - name: list all files in current dir
+        run: |
+          find .    
+      - name: environment tests
+        run: |
+          echo $UNITY_PATH 
+          find $UNITY_PATH 
+          echo $ANDROID_HOME
+          echo $ANDROID_NDK_HOME
+          echo $NDK_HOME
+          echo $JAVA_HOME
+          echo ${{ matrix.unity-version-matrix }}
+
+#        https://stackoverflow.com/questions/46402772/failed-to-install-android-sdk-java-lang-noclassdeffounderror-javax-xml-bind-a
+      - name: accept licenses if not already done
+        continue-on-error: true 
+        run: |
+          echo "y" | /opt/Unity/${{ matrix.unity-version-matrix }}/Editor/Data/PlaybackEngines/AndroidPlayer/SDK/tools/bin/sdkmanager --sdk_root="/opt/Unity/${{ matrix.unity-version-matrix }}/Editor/Data/PlaybackEngines/AndroidPlayer/SDK" --licenses
+      - name: list all files in unity install dir
+        run: |
+          find /opt/Unity/
+      - name: write out license file 2019
+        if: ${{ contains(matrix.unity-version-matrix,'2019') }}
+        run: |
+          echo -n -e "$LICENSE" > license.alf
+          echo inside a multi-line script: $LICENSE
+          wc -m license.alf
+          ls -al *alf
+      - name: write out license file 2020
+        if: ${{ contains(matrix.unity-version-matrix,'2020') }}
+        run: |
+          echo -n -e "$LICENSE2020" > license.alf
+          echo inside a multi-line script: $LICENSE2020
+          wc -m license.alf
+          ls -al *alf
+      - name: write out license file 2021
+        if: ${{ contains(matrix.unity-version-matrix,'2021') }}
+        run: |
+          echo -n -e "$LICENSE2021" > license.alf
+          echo inside a multi-line script: $LICENSE2021
+          wc -m license.alf
+          ls -al *alf
+      - name: alternate secret test
+        run: |
+          echo -n -e "$LICENSE2" > license2.alf
+          echo inside a multi-line script: $LICENSE2
+          wc -m license2.alf
+          ls -al *alf
+      #- run:
+      #  name: accept licenses
+      #  command: |
+      #    echo "y" | ${ANDROID_HOME}/tools/bin/sdkmanager --licenses
+      #https://docs.unity3d.com/Manual/EditorCommandLineArguments.html
+      - name: manual license activation
+        run: |
+          /opt/Unity/${{ matrix.unity-version-matrix }}/Editor/Unity -quit -batchMode -buildTarget Android -logFile -noGraphics -manualLicenseFile license.alf || exit 0
+      - name: unity android build
+        run: |
+          /opt/Unity/${{ matrix.unity-version-matrix }}/Editor/Unity -quit -batchMode -buildTarget Android -logFile -noGraphics -projectPath VR/ -executeMethod TestBuilder.Build || exit 0
+#      - name: Build Unity
+#        uses: kuler90/build-unity@v1
+#        continue-on-error: true 
+#        with:
+#          build-target: Android
+#          build-method: TestBuilder.Build
+
+#return license failed - "activated manually for this computer and can't be returned"  https://github.com/hardcoded2/WavePassthroughOverlayExample/runs/5540616684?check_suite_focus=true#step:9:79
+#feels wrong not to do it... just ignore the error code i guess?
+
+      - name: return license
+        continue-on-error: true 
+        run: |
+          /opt/Unity/${{ matrix.unity-version-matrix }}/Editor/Unity -quit -batchMode -logFile -noGraphics -returnlicense || true
+
+      - name: list all files in build dir
+        run: |
+          find Builds/
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build${{ matrix.unity-version-matrix}}_${{github.run_id}}_${{github.run_number}}_${{github.run_attempt}}
+          retention-days: 30
+          path: |
+            Builds/*.apk
+
+#      - name: 'Upload Artifact'
+#        uses: actions/upload-artifact@v2
+#        with:
+#          name: build${{ github.run_number }}
+#          path: Builds/*apk
