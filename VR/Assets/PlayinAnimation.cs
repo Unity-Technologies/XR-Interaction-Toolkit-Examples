@@ -12,7 +12,7 @@ public class PlayinAnimation : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            myAnimationController.SetBool("ClaySculpt", true);
+            myAnimationController.SetFloat("Sculpt Clay", 1);
             //AnimationToPlay.SampleAnimation(GameObject go, 1 deltatime)
             //AnimationToPlay = true; m_PlayAutomatically m_Animations
            
@@ -23,7 +23,7 @@ public class PlayinAnimation : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            myAnimationController.SetBool("ClaySculpt", false);
+            myAnimationController.SetFloat("ClaySculpt", 0);
         }
     }
 }

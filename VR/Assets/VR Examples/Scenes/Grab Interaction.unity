@@ -225,7 +225,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 54224013}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.427, y: 0.727, z: -1.212}
+  m_LocalPosition: {x: -0.427, y: 0.727, z: -1.207}
   m_LocalScale: {x: 0.22790268, y: 0.2908017, z: 0.23870061}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1037,6 +1037,11 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 7993631948453105835, guid: bc02fbc1ad45c3e409e54d27ae84c840,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 8381642636002053185, guid: bc02fbc1ad45c3e409e54d27ae84c840,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -1486,6 +1491,11 @@ PrefabInstance:
         type: 3}
       propertyPath: onReleaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8680563905871088991, guid: bc02fbc1ad45c3e409e54d27ae84c840,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 9020609678100612374, guid: bc02fbc1ad45c3e409e54d27ae84c840,
         type: 3}
