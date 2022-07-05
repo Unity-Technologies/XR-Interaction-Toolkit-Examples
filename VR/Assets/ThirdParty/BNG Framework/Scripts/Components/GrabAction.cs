@@ -21,6 +21,7 @@ namespace BNG {
 
             if(g == null) {
                 g = GetComponent<Grabbable>();
+                gameObject.CompareTag("GrabTray");
             }
 
             // Never hold this item
