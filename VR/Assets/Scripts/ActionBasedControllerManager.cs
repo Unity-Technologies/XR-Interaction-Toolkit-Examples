@@ -157,6 +157,18 @@ public class ActionBasedControllerManager : MonoBehaviour
         set => m_TeleportModeCancel = value;
     }
 
+    [SerializeField]
+    [Tooltip("The reference to the action to choose the horizontal direction in which you will be facing after teleportation with this controller.")]
+    InputActionReference m_TeleportDirection;
+    /// <summary>
+    /// The reference to the action to choose the horizontal direction in which you will be facing after teleportation with this controller.
+    /// </summary>
+    public InputActionReference teleportDirection
+    {
+        get => m_TeleportDirection;
+        set => m_TeleportDirection = value;
+    }
+
     // Character movement actions
     [SerializeField]
     [Tooltip("The reference to the action of turning the XR rig with this controller.")]
@@ -429,6 +441,7 @@ public class ActionBasedControllerManager : MonoBehaviour
                 // Enable transitions to Teleport state 
                 EnableAction(m_TeleportModeActivate);
                 EnableAction(m_TeleportModeCancel);
+                EnableAction(m_TeleportDirection);
 
                 // Enable turn and move actions
                 EnableAction(m_Turn);

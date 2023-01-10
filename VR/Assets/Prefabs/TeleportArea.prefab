@@ -813,6 +813,7 @@ MonoBehaviour:
     m_Bits: 2147483648
   m_InteractionLayers:
     m_Bits: 2147483648
+  m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_CustomReticle: {fileID: 3819676577015031517, guid: c9ea54082e6151843acb776fb52ed6f7,
     type: 3}
@@ -897,7 +898,11 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 0}
   m_MatchOrientation: 0
+  m_MatchDirectionalInput: 1
   m_TeleportTrigger: 0
+  m_Teleporting:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7349766712023350560
 GameObject:
   m_ObjectHideFlags: 0
