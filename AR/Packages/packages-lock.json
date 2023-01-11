@@ -1,33 +1,10 @@
 {
   "dependencies": {
-    "com.unity.2d.sprite": {
+    "com.unity.editorcoroutines": {
       "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {}
-    },
-    "com.unity.2d.tilemap": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {}
-    },
-    "com.unity.ads": {
-      "version": "3.6.1",
-      "depth": 0,
+      "depth": 1,
       "source": "registry",
-      "dependencies": {
-        "com.unity.ugui": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.analytics": {
-      "version": "3.3.5",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.ugui": "1.0.0"
-      },
+      "dependencies": {},
       "url": "https://packages.unity.com"
     },
     "com.unity.ext.nunit": {
@@ -38,55 +15,50 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.rider": {
-      "version": "1.1.4",
+      "version": "3.0.17",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.test-framework": "1.1.1"
+        "com.unity.ext.nunit": "1.0.6"
       },
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.visualstudio": {
-      "version": "1.0.11",
+      "version": "2.0.17",
       "depth": 0,
       "source": "registry",
-      "dependencies": {},
+      "dependencies": {
+        "com.unity.test-framework": "1.1.9"
+      },
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.vscode": {
-      "version": "1.2.3",
+      "version": "1.2.5",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
     "com.unity.inputsystem": {
-      "version": "1.2.0",
-      "depth": 1,
+      "version": "1.4.4",
+      "depth": 0,
       "source": "registry",
       "dependencies": {
         "com.unity.modules.uielements": "1.0.0"
       },
       "url": "https://packages.unity.com"
     },
-    "com.unity.purchasing": {
-      "version": "2.2.2",
-      "depth": 0,
+    "com.unity.subsystemregistration": {
+      "version": "1.1.0",
+      "depth": 2,
       "source": "registry",
       "dependencies": {
-        "com.unity.ugui": "1.0.0"
+        "com.unity.modules.subsystems": "1.0.0"
       },
       "url": "https://packages.unity.com"
     },
-    "com.unity.subsystemregistration": {
-      "version": "1.0.6",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://packages.unity.com"
-    },
     "com.unity.test-framework": {
-      "version": "1.1.24",
+      "version": "1.1.33",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -97,23 +69,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.textmeshpro": {
-      "version": "2.1.4",
+      "version": "3.0.6",
       "depth": 0,
       "source": "registry",
       "dependencies": {
         "com.unity.ugui": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.timeline": {
-      "version": "1.2.18",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.modules.director": "1.0.0",
-        "com.unity.modules.animation": "1.0.0",
-        "com.unity.modules.audio": "1.0.0",
-        "com.unity.modules.particlesystem": "1.0.0"
       },
       "url": "https://packages.unity.com"
     },
@@ -127,41 +87,45 @@
       }
     },
     "com.unity.xr.arcore": {
-      "version": "2.1.16",
+      "version": "4.1.13",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.xr.arsubsystems": "2.1.16",
-        "com.unity.xr.management": "4.0.1"
+        "com.unity.xr.arsubsystems": "4.1.13",
+        "com.unity.xr.management": "4.0.1",
+        "com.unity.modules.androidjni": "1.0.0",
+        "com.unity.modules.unitywebrequest": "1.0.0"
       },
       "url": "https://packages.unity.com"
     },
     "com.unity.xr.arfoundation": {
-      "version": "2.1.16",
+      "version": "4.1.13",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.xr.legacyinputhelpers": "2.1.7",
-        "com.unity.xr.arsubsystems": "2.1.16"
+        "com.unity.xr.arsubsystems": "4.1.13",
+        "com.unity.xr.management": "4.0.1",
+        "com.unity.modules.particlesystem": "1.0.0"
       },
       "url": "https://packages.unity.com"
     },
     "com.unity.xr.arkit": {
-      "version": "2.1.16",
+      "version": "4.1.13",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.xr.arsubsystems": "2.1.16",
+        "com.unity.editorcoroutines": "1.0.0",
+        "com.unity.xr.arsubsystems": "4.1.13",
         "com.unity.xr.management": "4.0.1"
       },
       "url": "https://packages.unity.com"
     },
     "com.unity.xr.arsubsystems": {
-      "version": "2.1.16",
+      "version": "4.1.13",
       "depth": 1,
       "source": "registry",
       "dependencies": {
-        "com.unity.subsystemregistration": "1.0.6"
+        "com.unity.subsystemregistration": "1.1.0"
       },
       "url": "https://packages.unity.com"
     },
@@ -175,11 +139,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.xr.interaction.toolkit": {
-      "version": "2.0.2",
+      "version": "2.2.0",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.inputsystem": "1.2.0",
+        "com.unity.inputsystem": "1.3.0",
         "com.unity.ugui": "1.0.0",
         "com.unity.xr.core-utils": "2.0.0",
         "com.unity.xr.legacyinputhelpers": "2.1.8",
@@ -190,7 +154,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.xr.legacyinputhelpers": {
-      "version": "2.1.8",
+      "version": "2.1.10",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -200,8 +164,8 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.xr.management": {
-      "version": "4.0.1",
-      "depth": 1,
+      "version": "4.2.1",
+      "depth": 0,
       "source": "registry",
       "dependencies": {
         "com.unity.modules.subsystems": "1.0.0",
@@ -345,6 +309,18 @@
       "depth": 0,
       "source": "builtin",
       "dependencies": {
+        "com.unity.modules.ui": "1.0.0",
+        "com.unity.modules.imgui": "1.0.0",
+        "com.unity.modules.jsonserialize": "1.0.0",
+        "com.unity.modules.uielementsnative": "1.0.0"
+      }
+    },
+    "com.unity.modules.uielementsnative": {
+      "version": "1.0.0",
+      "depth": 1,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.ui": "1.0.0",
         "com.unity.modules.imgui": "1.0.0",
         "com.unity.modules.jsonserialize": "1.0.0"
       }
