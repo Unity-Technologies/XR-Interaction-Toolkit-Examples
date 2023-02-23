@@ -1,0 +1,542 @@
+// This file is generated. Do not modify by hand.
+// XML documentation file not found. To check if public methods have XML comments,
+// make sure the XML doc file is present and located next to the scraped dll
+public class TargetRing : UnityEngine.MonoBehaviour, Unity.XRContent.Animation.IAnimationEventActionBegin, Unity.XRContent.Animation.IAnimationEventActionFinished
+{
+    public TargetRing() {}
+    public void OnHit();
+}
+
+namespace Unity.SpatialFramework.Rendering
+{
+    public class HighlightController
+    {
+        [UnityEngine.SerializeField] [UnityEngine.Tooltip(@"Manually set renderers to be affected by the highlight")] protected UnityEngine.Renderer[] m_ManuallySetRenderers;
+        public UnityEngine.Transform RendererSource { get; set; }
+        public HighlightController() {}
+        public void Deinitialize();
+        public void Highlight();
+        public void Initialize();
+        public void RegisterCacheUser(Unity.SpatialFramework.Rendering.IMaterialHighlight cacheUser);
+        public void Unhighlight(bool force = False);
+        public void UnregisterCacheUser(Unity.SpatialFramework.Rendering.IMaterialHighlight cacheUser);
+        public void Update();
+    }
+
+    public interface IMaterialHighlight
+    {
+        public abstract UnityEngine.Material HighlightMaterial { get; }
+        public abstract Unity.SpatialFramework.Rendering.MaterialHighlightMode HighlightMode { get; set; }
+        public abstract void Deinitialize();
+        public abstract void Initialize();
+        public abstract void OnHighlight();
+        public abstract float OnUnhighlight();
+    }
+
+    public class InteractableVisualsController : UnityEngine.MonoBehaviour
+    {
+        public InteractableVisualsController() {}
+    }
+
+    public class MaterialHighlight : UnityEngine.MonoBehaviour, Unity.SpatialFramework.Rendering.IMaterialHighlight
+    {
+        public virtual UnityEngine.Material HighlightMaterial { get; set; }
+        public virtual Unity.SpatialFramework.Rendering.MaterialHighlightMode HighlightMode { get; set; }
+        public MaterialHighlight() {}
+    }
+
+    public enum MaterialHighlightMode
+    {
+        public const Unity.SpatialFramework.Rendering.MaterialHighlightMode Layer = 0;
+        public const Unity.SpatialFramework.Rendering.MaterialHighlightMode Replace = 1;
+        public int value__;
+    }
+
+    public class OutlineHighlight : UnityEngine.MonoBehaviour, Unity.SpatialFramework.Rendering.IMaterialHighlight
+    {
+        public virtual UnityEngine.Material HighlightMaterial { get; }
+        public virtual Unity.SpatialFramework.Rendering.MaterialHighlightMode HighlightMode { get; set; }
+        public UnityEngine.Color outlineColor { get; set; }
+        public float outlineScale { get; set; }
+        public UnityEngine.Color startingOutlineColor { get; set; }
+        public float startingOutlineScale { get; set; }
+        public bool transitionColor { get; set; }
+        public float transitionDuration { get; set; }
+        public bool transitionWidth { get; set; }
+        public OutlineHighlight() {}
+        public void PlayPulseAnimation(bool pulseUp = True);
+    }
+
+    public enum RendererCaptureDepth
+    {
+        public const Unity.SpatialFramework.Rendering.RendererCaptureDepth AllChildRenderers = 0;
+        public const Unity.SpatialFramework.Rendering.RendererCaptureDepth CurrentRenderer = 1;
+        public const Unity.SpatialFramework.Rendering.RendererCaptureDepth ManualOnly = 2;
+        public int value__;
+    }
+}
+
+namespace Unity.SpatialFramework.UI.Layout
+{
+    public class LazyFollow : UnityEngine.MonoBehaviour
+    {
+        public float smoothTime;
+        public LazyFollow() {}
+    }
+
+    public class TurnToFace : UnityEngine.MonoBehaviour
+    {
+        public TurnToFace() {}
+    }
+
+    public class ZoneScale : UnityEngine.MonoBehaviour
+    {
+        public ZoneScale() {}
+        public void Snap();
+    }
+}
+
+namespace Unity.SpatialFramework.Walkthrough
+{
+    public class Walkthrough : UnityEngine.MonoBehaviour
+    {
+        public System.Action WalkthroughChangedCallback;
+        public int CurrentStep { get; }
+        public Unity.SpatialFramework.Walkthrough.WalkthroughStep[] steps { get; }
+        public string WalkthroughName { get; }
+        public Walkthrough() {}
+        public void SkipToStep(int stepIndex);
+        public void SkipToStep(int stepIndex, bool autoProgressIfComplete);
+    }
+
+    public class WalkthroughStep : UnityEngine.MonoBehaviour
+    {
+        public bool CanProgress { get; }
+        public bool CanSkip { get; }
+        public bool Completed { get; }
+        public string Description { get; }
+        public UnityEngine.GameObject Link { get; set; }
+        public UnityEngine.GameObject Waypoint { get; set; }
+        public WalkthroughStep() {}
+        public void CancelStep();
+        public void Initialize();
+        public void StartStep(System.Action<bool> onComplete, bool allowAutoProgress = True);
+    }
+
+    public abstract class WalkthroughTrigger : UnityEngine.MonoBehaviour
+    {
+        protected WalkthroughTrigger() {}
+        public abstract bool Check();
+        public abstract bool ResetTrigger();
+    }
+
+    [UnityEngine.RequireComponent(typeof(UnityEngine.LineRenderer))] public class WaypointCurve : UnityEngine.MonoBehaviour
+    {
+        public UnityEngine.Vector3 end { get; set; }
+        public UnityEngine.Vector3 start { get; set; }
+        public WaypointCurve() {}
+    }
+}
+
+namespace Unity.XRContent.Animation
+{
+    public class AnimationEventActionBegin : UnityEngine.StateMachineBehaviour
+    {
+        public AnimationEventActionBegin() {}
+        public virtual void OnStateEnter(UnityEngine.Animator animator, UnityEngine.AnimatorStateInfo stateInfo, int layerIndex);
+    }
+
+    public class AnimationEventActionFinished : UnityEngine.StateMachineBehaviour
+    {
+        public AnimationEventActionFinished() {}
+        public virtual void OnStateExit(UnityEngine.Animator animator, UnityEngine.AnimatorStateInfo stateInfo, int layerIndex);
+    }
+
+    public interface IAnimationEventActionBegin
+    {
+        public abstract void ActionBegin(string label);
+    }
+
+    public interface IAnimationEventActionFinished
+    {
+        public abstract void ActionFinished(string label);
+    }
+
+    public class ObjectReset : UnityEngine.MonoBehaviour
+    {
+        public ObjectReset() {}
+    }
+
+    public class OnAnimationEvent : UnityEngine.MonoBehaviour, Unity.XRContent.Animation.IAnimationEventActionBegin, Unity.XRContent.Animation.IAnimationEventActionFinished
+    {
+        public OnAnimationEvent() {}
+        public virtual void ActionBegin(string label);
+        public virtual void ActionFinished(string label);
+    }
+}
+
+namespace Unity.XRContent.Input
+{
+    public static class InputMediator
+    {
+        public static bool ConsumeControl(UnityEngine.InputSystem.InputAction source, bool automaticRelease, bool force = False, UnityEngine.InputSystem.InputAction friendAction1 = default(UnityEngine.InputSystem.InputAction), UnityEngine.InputSystem.InputAction friendAction2 = default(UnityEngine.InputSystem.InputAction));
+        public static bool ReleaseControl(UnityEngine.InputSystem.InputAction source, bool force = False);
+    }
+}
+
+namespace Unity.XRContent.Interaction
+{
+    [UnityEngine.AddComponentMenu(@"XR/Action Based Controller Manager")] [UnityEngine.DefaultExecutionOrder(10)] public class ActionBasedControllerManager : UnityEngine.MonoBehaviour
+    {
+        public const int kControllerManagerUpdateOrder = 10;
+        public bool SmoothMotionEnabled { get; set; }
+        public bool SmoothTurnEnabled { get; set; }
+        public ActionBasedControllerManager() {}
+        protected void OnDisable();
+        protected void OnEnable();
+        [System.Runtime.CompilerServices.IteratorStateMachine(typeof(Unity.XRContent.Interaction.ActionBasedControllerManager.<Start>d__36))] protected System.Collections.IEnumerator Start();
+    }
+
+    public class AutoSocketAttach : UnityEngine.MonoBehaviour
+    {
+        public AutoSocketAttach() {}
+    }
+
+    public class Breakable : UnityEngine.MonoBehaviour
+    {
+        public Unity.XRContent.Interaction.Breakable.BreakEvent OnBreak { get; }
+        public Breakable() {}
+        public class BreakEvent : UnityEngine.Events.UnityEvent<UnityEngine.GameObject, UnityEngine.GameObject>
+        {
+            public BreakEvent() {}
+        }
+    }
+
+    public class ClawMachine : UnityEngine.MonoBehaviour
+    {
+        public ClawMachine() {}
+        public void OnButtonPress();
+        public void OnButtonRelease();
+        public void OnJoystickValueChangeX(float x);
+        public void OnJoystickValueChangeY(float y);
+    }
+
+    public class DestroyObject : UnityEngine.MonoBehaviour
+    {
+        public DestroyObject() {}
+    }
+
+    public class Door : UnityEngine.MonoBehaviour
+    {
+        public UnityEngine.Events.UnityEvent OnLock { get; }
+        public UnityEngine.Events.UnityEvent OnUnlock { get; }
+        public Door() {}
+        public void BeginDoorPulling(UnityEngine.XR.Interaction.Toolkit.SelectEnterEventArgs args);
+        public void DoorHandleUpdate(float handleValue);
+        public void EndDoorPulling();
+        public void KeyDropUpdate(UnityEngine.XR.Interaction.Toolkit.SelectEnterEventArgs args);
+        public void KeyLockDeselect(UnityEngine.XR.Interaction.Toolkit.SelectExitEventArgs args);
+        public void KeyLockSelect(UnityEngine.XR.Interaction.Toolkit.SelectEnterEventArgs args);
+        public void KeyUpdate(float keyValue);
+    }
+
+    public class DynamicMoveProvider : UnityEngine.XR.Interaction.Toolkit.ActionBasedContinuousMoveProvider
+    {
+        public bool HeadDrivesMotion { get; set; }
+        public DynamicMoveProvider() {}
+        protected virtual void Awake();
+        protected virtual UnityEngine.Vector2 ReadInput();
+    }
+
+    public class FlippyDoor : UnityEngine.MonoBehaviour
+    {
+        public FlippyDoor() {}
+    }
+
+    public interface IKeychain
+    {
+        public abstract bool Contains(Unity.XRContent.Interaction.Key key);
+    }
+
+    [UnityEngine.CreateAssetMenu(menuName = @"XR/Key Lock System/Key")] public class Key : UnityEngine.ScriptableObject
+    {
+        public Key() {}
+    }
+
+    [UnityEngine.DisallowMultipleComponent] public class Keychain : UnityEngine.MonoBehaviour, Unity.XRContent.Interaction.IKeychain
+    {
+        public Keychain() {}
+        public void AddKey(Unity.XRContent.Interaction.Key key);
+        public virtual bool Contains(Unity.XRContent.Interaction.Key key);
+        public void RemoveKey(Unity.XRContent.Interaction.Key key);
+    }
+
+    public class LaunchProjectile : UnityEngine.MonoBehaviour
+    {
+        public LaunchProjectile() {}
+        public void Fire();
+    }
+
+    public class Lock
+    {
+        public System.Collections.Generic.List<Unity.XRContent.Interaction.Key> requiredKeys { get; }
+        public Lock() {}
+        public bool CanUnlock(Unity.XRContent.Interaction.IKeychain keychain);
+    }
+
+    public class LocomotionSetup : UnityEngine.MonoBehaviour
+    {
+        public LocomotionSetup() {}
+        protected void OnDisable();
+        protected void OnEnable();
+    }
+
+    public class OnCollision : UnityEngine.MonoBehaviour
+    {
+        public Unity.XRContent.Interaction.OnCollision.CollisionEvent OnEnter { get; }
+        public Unity.XRContent.Interaction.OnCollision.CollisionEvent OnExit { get; }
+        public string RequiredTag { get; }
+        public OnCollision() {}
+        public class CollisionEvent : UnityEngine.Events.UnityEvent<UnityEngine.Collision>
+        {
+            public CollisionEvent() {}
+        }
+    }
+
+    public class OnSelectInteractable : UnityEngine.MonoBehaviour
+    {
+        public OnSelectInteractable() {}
+    }
+
+    public class OnTilt : UnityEngine.MonoBehaviour
+    {
+        public UnityEngine.Events.UnityEvent OnBegin { get; }
+        public UnityEngine.Events.UnityEvent OnEnd { get; }
+        public OnTilt() {}
+    }
+
+    public class OnTrigger : UnityEngine.MonoBehaviour
+    {
+        public Unity.XRContent.Interaction.OnTrigger.TriggerEvent OnEnter { get; }
+        public Unity.XRContent.Interaction.OnTrigger.TriggerEvent OnExit { get; }
+        public string RequiredTag { get; }
+        public OnTrigger() {}
+        public class TriggerEvent : UnityEngine.Events.UnityEvent<UnityEngine.GameObject>
+        {
+            public TriggerEvent() {}
+        }
+    }
+
+    [UnityEngine.RequireComponent(typeof(UnityEngine.Rigidbody))] public class OnVelocity : UnityEngine.MonoBehaviour
+    {
+        public UnityEngine.Events.UnityEvent OnBegin { get; }
+        public UnityEngine.Events.UnityEvent OnEnd { get; }
+        public OnVelocity() {}
+        public void Reset();
+    }
+
+    public class PerlerMachineController : UnityEngine.MonoBehaviour
+    {
+        public PerlerMachineController() {}
+        public void SetMachineActive(bool active);
+    }
+
+    [UnityEngine.RequireComponent(typeof(UnityEngine.AudioSource))] public class PlayQuickSound : UnityEngine.MonoBehaviour
+    {
+        public PlayQuickSound() {}
+        public void Play();
+    }
+
+    public class PreferGrabInteraction : UnityEngine.MonoBehaviour
+    {
+        public PreferGrabInteraction() {}
+    }
+
+    [UnityEngine.RequireComponent(typeof(UnityEngine.XR.Interaction.Toolkit.XRRayInteractor))] public class RayPreferenceSelector : UnityEngine.MonoBehaviour
+    {
+        public RayPreferenceSelector() {}
+    }
+
+    public class TransformJoint : UnityEngine.MonoBehaviour, UnityEngine.ISerializationCallbackReceiver
+    {
+        public bool AdjustMass { get; set; }
+        public UnityEngine.Vector3 Anchor { get; set; }
+        public UnityEngine.Vector3 AnchorAngle { get; set; }
+        public bool AutoConfigureConnectedAnchor { get; set; }
+        public float BaseForce { get; set; }
+        public float BreakAngle { get; set; }
+        public float BreakDistance { get; set; }
+        public UnityEngine.Vector3 ConnectedAnchor { get; set; }
+        public UnityEngine.Vector3 ConnectedAnchorAngle { get; set; }
+        public UnityEngine.Transform ConnectedBody { get; set; }
+        public bool EnableCollision { get; set; }
+        public bool MatchRotation { get; set; }
+        public float SpringForce { get; set; }
+        public TransformJoint() {}
+        public virtual void OnAfterDeserialize();
+        public virtual void OnBeforeSerialize();
+    }
+
+    public class UfoAbductionForce : UnityEngine.MonoBehaviour
+    {
+        public UfoAbductionForce() {}
+        public void OnButtonValueChange(float value);
+    }
+
+    public class Unbreakable : UnityEngine.MonoBehaviour
+    {
+        public Unity.XRContent.Interaction.Unbreakable.RestoreEvent OnRestore { get; }
+        public Unbreakable() {}
+        public class RestoreEvent : UnityEngine.Events.UnityEvent<UnityEngine.GameObject>
+        {
+            public RestoreEvent() {}
+        }
+    }
+
+    public class XRClosedSocketInteractor : UnityEngine.XR.Interaction.Toolkit.XRSocketInteractor
+    {
+        public XRClosedSocketInteractor() {}
+        public virtual bool CanHover(UnityEngine.XR.Interaction.Toolkit.XRBaseInteractable interactable);
+        public virtual bool CanSelect(UnityEngine.XR.Interaction.Toolkit.XRBaseInteractable interactable);
+    }
+
+    public class XRGripButton : UnityEngine.XR.Interaction.Toolkit.XRBaseInteractable
+    {
+        public UnityEngine.Transform Button { get; set; }
+        public UnityEngine.Events.UnityEvent OnPress { get; }
+        public UnityEngine.Events.UnityEvent OnRelease { get; }
+        public float PressDistance { get; set; }
+        public XRGripButton() {}
+        protected virtual void OnDisable();
+        protected virtual void OnEnable();
+    }
+
+    [UnityEngine.DisallowMultipleComponent] [UnityEngine.RequireComponent(typeof(UnityEngine.XR.Interaction.Toolkit.XRBaseInteractor))] public class XRInfiniteInteractable : UnityEngine.MonoBehaviour
+    {
+        public bool active { get; set; }
+        public XRInfiniteInteractable() {}
+    }
+
+    public class XRJoystick : UnityEngine.XR.Interaction.Toolkit.XRBaseInteractable
+    {
+        public float DeadZoneAngle { get; set; }
+        public UnityEngine.Transform Handle { get; set; }
+        public Unity.XRContent.Interaction.XRJoystick.JoystickType JoystickMotion { get; set; }
+        public float MaxAngle { get; set; }
+        public Unity.XRContent.Interaction.XRJoystick.ValueChangeEvent OnValueChangeX { get; }
+        public Unity.XRContent.Interaction.XRJoystick.ValueChangeEvent OnValueChangeY { get; }
+        public bool RecenterOnRelease { get; set; }
+        public UnityEngine.Vector2 Value { get; set; }
+        public XRJoystick() {}
+        protected virtual void OnDisable();
+        protected virtual void OnEnable();
+        public virtual void ProcessInteractable(UnityEngine.XR.Interaction.Toolkit.XRInteractionUpdateOrder.UpdatePhase updatePhase);
+        public enum JoystickType
+        {
+            public const Unity.XRContent.Interaction.XRJoystick.JoystickType BothCircle = 0;
+            public const Unity.XRContent.Interaction.XRJoystick.JoystickType BothSquare = 1;
+            public const Unity.XRContent.Interaction.XRJoystick.JoystickType FrontBack = 2;
+            public const Unity.XRContent.Interaction.XRJoystick.JoystickType LeftRight = 3;
+            public int value__;
+        }
+        public class ValueChangeEvent : UnityEngine.Events.UnityEvent<float>
+        {
+            public ValueChangeEvent() {}
+        }
+    }
+
+    public class XRKnob : UnityEngine.XR.Interaction.Toolkit.XRBaseInteractable
+    {
+        public bool ClampedMotion { get; set; }
+        public UnityEngine.Transform Handle { get; set; }
+        public float MaxAngle { get; set; }
+        public float MinAngle { get; set; }
+        public Unity.XRContent.Interaction.XRKnob.ValueChangeEvent OnValueChange { get; }
+        public float PositionTrackedRadius { get; set; }
+        public float Value { get; set; }
+        public XRKnob() {}
+        protected virtual void OnDisable();
+        protected virtual void OnEnable();
+        public virtual void ProcessInteractable(UnityEngine.XR.Interaction.Toolkit.XRInteractionUpdateOrder.UpdatePhase updatePhase);
+        public class ValueChangeEvent : UnityEngine.Events.UnityEvent<float>
+        {
+            public ValueChangeEvent() {}
+        }
+    }
+
+    public class XRLever : UnityEngine.XR.Interaction.Toolkit.XRBaseInteractable
+    {
+        public UnityEngine.Transform Handle { get; set; }
+        public bool LockToValue { get; set; }
+        public float MaxAngle { get; set; }
+        public float MinAngle { get; set; }
+        public UnityEngine.Events.UnityEvent OnLeverActivate { get; }
+        public UnityEngine.Events.UnityEvent OnLeverDeactivate { get; }
+        public bool Value { get; set; }
+        public XRLever() {}
+        protected virtual void OnDisable();
+        protected virtual void OnEnable();
+        public virtual void ProcessInteractable(UnityEngine.XR.Interaction.Toolkit.XRInteractionUpdateOrder.UpdatePhase updatePhase);
+    }
+
+    public class XRPushButton : UnityEngine.XR.Interaction.Toolkit.XRBaseInteractable
+    {
+        public UnityEngine.Transform Button { get; set; }
+        public UnityEngine.Events.UnityEvent OnPress { get; }
+        public UnityEngine.Events.UnityEvent OnRelease { get; }
+        public Unity.XRContent.Interaction.XRPushButton.ValueChangeEvent OnValueChange { get; }
+        public float PressDistance { get; set; }
+        public bool ToggleValue { get; set; }
+        public float Value { get; }
+        public XRPushButton() {}
+        public virtual bool IsHoverableBy(UnityEngine.XR.Interaction.Toolkit.XRBaseInteractor interactor);
+        protected virtual void OnDisable();
+        protected virtual void OnEnable();
+        public virtual void ProcessInteractable(UnityEngine.XR.Interaction.Toolkit.XRInteractionUpdateOrder.UpdatePhase updatePhase);
+        public class ValueChangeEvent : UnityEngine.Events.UnityEvent<float>
+        {
+            public ValueChangeEvent() {}
+        }
+    }
+
+    public class XRRigLocomotionManager : UnityEngine.MonoBehaviour
+    {
+        public System.Collections.Generic.List<UnityEngine.InputSystem.InputActionAsset> ActionAssets { get; set; }
+        public System.Collections.Generic.List<string> ActionMaps { get; set; }
+        public System.Collections.Generic.List<UnityEngine.InputSystem.InputActionReference> Actions { get; set; }
+        public Unity.XRContent.Interaction.XRRigLocomotionManager.MoveScheme LeftHandMoveScheme { get; set; }
+        public Unity.XRContent.Interaction.XRRigLocomotionManager.TurnStyle LeftHandTurnStyle { get; set; }
+        public Unity.XRContent.Interaction.XRRigLocomotionManager.MoveScheme RightHandMoveScheme { get; set; }
+        public Unity.XRContent.Interaction.XRRigLocomotionManager.TurnStyle RightHandTurnStyle { get; set; }
+        public Unity.XRContent.Interaction.DynamicMoveProvider SmoothMoveProvider { get; set; }
+        public UnityEngine.XR.Interaction.Toolkit.ContinuousTurnProviderBase SmoothTurnProvider { get; set; }
+        public UnityEngine.XR.Interaction.Toolkit.SnapTurnProviderBase SnapTurnProvider { get; set; }
+        public XRRigLocomotionManager() {}
+        public enum MoveScheme
+        {
+            public const Unity.XRContent.Interaction.XRRigLocomotionManager.MoveScheme Smooth = 1;
+            public const Unity.XRContent.Interaction.XRRigLocomotionManager.MoveScheme Teleport = 0;
+            public int value__;
+        }
+        public enum TurnStyle
+        {
+            public const Unity.XRContent.Interaction.XRRigLocomotionManager.TurnStyle Smooth = 1;
+            public const Unity.XRContent.Interaction.XRRigLocomotionManager.TurnStyle Snap = 0;
+            public int value__;
+        }
+    }
+
+    public class XRSlider : UnityEngine.XR.Interaction.Toolkit.XRBaseInteractable
+    {
+        public Unity.XRContent.Interaction.XRSlider.ValueChangeEvent OnValueChange { get; }
+        public float Value { get; set; }
+        public XRSlider() {}
+        protected virtual void OnDisable();
+        protected virtual void OnEnable();
+        public virtual void ProcessInteractable(UnityEngine.XR.Interaction.Toolkit.XRInteractionUpdateOrder.UpdatePhase updatePhase);
+        public class ValueChangeEvent : UnityEngine.Events.UnityEvent<float>
+        {
+            public ValueChangeEvent() {}
+        }
+    }
+}
