@@ -1,4 +1,4 @@
-# XR Interaction Toolkit Examples - Version 2.3.0
+# XR Interaction Toolkit Examples - Version 2.3.2
 
 ## Introduction
 
@@ -41,9 +41,10 @@ The following stations are available in the XRI Examples:
 * [Station 2: Grab Interactables](Documentation/GrabInteractables.md) - Basic object manipulation.
 * [Station 3: Activate Interactables](Documentation/ActivateInteractables.md) - Manipulation of objects that can be triggered by the user.
 * [Station 4: Socket Interactors](Documentation/SocketInteractors.md) - Manipulation of objects that can snap to specific positions.
-* [Station 5: 2D UI](Documentation/UI-2D.md) - Creation and interaction with [world space](https://docs.unity3d.com/Packages/com.unity.ugui@1.0/manual/UICanvas.html#world-space) 2D UI.
-* [Station 6: 3D UI](Documentation/UI-3D.md) - Creation and interaction with 3D constrained controls.
-* [Station 7: Physics Interactables](Documentation/PhysicsInteractables.md) - Best practices for combining physics and XR input.
+* [Station 5: Gaze Interactions](Documentation/Gaze.md) - Leverage the eye-tracked or head-based gaze interactor to add assistive interaction to your projects.
+* [Station 6: 2D UI](Documentation/UI-2D.md) - Creation and interaction with [world space](https://docs.unity3d.com/Packages/com.unity.ugui@1.0/manual/UICanvas.html#world-space) 2D UI.
+* [Station 7: 3D UI](Documentation/UI-3D.md) - Creation and interaction with 3D constrained controls.
+* [Station 8: Physics Interactables](Documentation/PhysicsInteractables.md) - Best practices for combining physics and XR input.
 
 For a list of new features and deprecations, see [XRI Examples Changelog](CHANGELOG.md).
 

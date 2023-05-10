@@ -10,7 +10,7 @@ The interactables below have 3 states: default, grabbed and activated.
 
 ## Basic example
 
-The basic example objects differ from the [Grab Interactables](GrabInteractables.md) station in that they respond to the controller trigger when they are held. This occurs through their **HoverStateVisual** configuration, which is a child Prefab of the interactable. These objects are set to pulse a color when the controller trigger is pressed.
+The basic example objects differ from the [Grab Interactables](GrabInteractables.md) station in that they respond to the controller trigger when they are held. This occurs through their XR Interactable Affordance State Provider configuration, which sends state changes to the Affordance Receiver components on child GameObjects of the interactables (typically named Audio Feedback and Visual Feedback). These objects are set to change color when hovered, selected (picked up), and activated (when the controller trigger is pressed).
 
 ## Advanced examples
 
