@@ -14,7 +14,7 @@ Notice the difference in tracking latency. We recommend using instantaneous by d
 
 Each interactable example contains the required components for grabbing; a **Rigidbody**, **XR Grab Interactable**, and **Collider**.
 
-In addition, each example object contains a child Prefab named **HoverStateVisuals**. This is a helper we've included that will automatically highlight interactables when they are hovered along with providing haptic and audio feedback. Three variants are included, which have different levels of effects included when the activate button is pressed. These can be added to your own objects to automatically get hover-highlight support.
+In addition, each example object contains an example of how to use the Affordance System. Each Interactable contains a XR Interactable Affordance State Provider component, which sends state changes to the Affordance Receiver components on child GameObjects of the interactables (typically named Audio Feedback and Visual Feedback). There are receivers configured for both sound and color changes so that objects will automatically be highlighted when they are hovered along with providing haptic and audio feedback. Different variants are provided throughout the scene depending on the specific needs of the interaction.
 
 The major difference between the example objects is the movement type selected.
 * **Instantaneous** movement is for objects that do not need to interact with other physics objects.
