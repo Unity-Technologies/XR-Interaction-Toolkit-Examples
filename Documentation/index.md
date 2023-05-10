@@ -26,10 +26,11 @@ The following stations are available in the XRI Examples:
 * [Station 2: Grab Interactables](GrabInteractables.md) - Basic object manipulation.
 * [Station 3: Activate Interactables](ActivateInteractables.md) - Manipulation of objects that can be triggered by the user.
 * [Station 4: Socket Interactors](SocketInteractors.md) - Manipulation of objects that can snap to specific positions.
-* [Station 5: 2D UI](UI-2D.md) - Creation and interaction with [world space](https://docs.unity3d.com/Packages/com.unity.ugui@1.0/manual/UICanvas.html#world-space) 2D UI.
-* [Station 6: 3D UI](UI-3D.md) - Creation and interaction with 3D constrained controls.
-* [Station 7: Physics Interactables](PhysicsInteractables.md) - Best practices for combining physics and XR input.
+* [Station 5: Gaze Interaction](Gaze.md) - Object interaction with gaze.
+* [Station 6: 2D UI](UI-2D.md) - Creation and interaction with [world space](https://docs.unity3d.com/Packages/com.unity.ugui@1.0/manual/UICanvas.html#world-space) 2D UI.
+* [Station 7: 3D UI](UI-3D.md) - Creation and interaction with 3D constrained controls.
+* [Station 8: Physics Interactables](PhysicsInteractables.md) - Best practices for combining physics and XR input.
 
-For a list of new features and deprecations, see [XRI Examples Changelog](../changelog/CHANGELOG.html).
+For a list of new features and deprecations, see [XRI Examples Changelog](../CHANGELOG.md).
 
 For an overview of how the [Input System](https://docs.unity3d.com/Manual/com.unity.inputsystem.html) is used in this example, see [Input](Input.md).
