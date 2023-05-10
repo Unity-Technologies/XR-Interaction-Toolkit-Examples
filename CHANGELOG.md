@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
  - Added Gaze station
 
 ### Changed
- - Update XR Interaction Toolkit to 2.3.1.
+ - Update XR Interaction Toolkit to 2.3.2.
  - Updated all interactables to use the Affordance System instead of the Hover Highlight scripts.
  - Updated documentation with new features and Gaze station information.
 
