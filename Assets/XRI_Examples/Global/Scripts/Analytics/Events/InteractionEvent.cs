@@ -81,6 +81,15 @@ namespace UnityEngine.XR.Content.Interaction.Analytics
             internal const string k_DoorsExampleSubstationName = "DoorsExample";
         }
 
+        protected static class SetupStation
+        {
+            internal const string k_StationName = "Setup";
+
+            internal const string k_LeftHandSubstationName = "LeftHand";
+            internal const string k_LocomotionSettingsSubstationName = "LocomotionSettings";
+            internal const string k_RightHandSubstationName = "RightHand";
+        }
+
         [SerializeField]
         protected string Station;
 
@@ -432,6 +441,85 @@ namespace UnityEngine.XR.Content.Interaction.Analytics
     [Serializable]
     sealed class GrabDoorHandle : DoorsExampleParameter
     { }
+
+    // Left Hand
+    abstract class LeftHandParameter : StationParameter
+    {
+        internal LeftHandParameter()
+        {
+            Station = SetupStation.k_StationName;
+            Substation = SetupStation.k_LeftHandSubstationName;
+        }
+    }
+
+    [Serializable]
+    sealed class LeftHandLocomotionTypeInteraction : LeftHandParameter { }
+
+    [Serializable]
+    sealed class LeftMovementDirectionInteraction : LeftHandParameter { }
+
+    [Serializable]
+    sealed class LeftHandTurnStyleInteraction : LeftHandParameter { }
+
+    abstract class LocomotionSettingsParameter : StationParameter
+    {
+        internal LocomotionSettingsParameter()
+        {
+            Station = SetupStation.k_StationName;
+            Substation = SetupStation.k_LocomotionSettingsSubstationName;
+        }
+    }
+
+    [Serializable]
+    sealed class MoveSpeedInteraction : LocomotionSettingsParameter { }
+
+    [Serializable]
+    sealed class StrafeEnabledInteraction : LocomotionSettingsParameter { }
+
+    [Serializable]
+    sealed class ComfortModeInteraction : LocomotionSettingsParameter { }
+
+    [Serializable]
+    sealed class RigGravityEnabledInteraction : LocomotionSettingsParameter { }
+
+    [Serializable]
+    sealed class FlyDisabledInteraction : LocomotionSettingsParameter { }
+
+    [Serializable]
+    sealed class TurnSppedInteraction : LocomotionSettingsParameter { }
+
+    [Serializable]
+    sealed class TurnAroundEnabledInteraction : LocomotionSettingsParameter { }
+
+    [Serializable]
+    sealed class SnapTurnInteraction : LocomotionSettingsParameter { }
+
+    [Serializable]
+    sealed class GrabMoveDisabledInteraction : LocomotionSettingsParameter { }
+
+    [Serializable]
+    sealed class MoveRatioInteraction : LocomotionSettingsParameter { }
+
+    [Serializable]
+    sealed class ScalingDisabledInteraction : LocomotionSettingsParameter { }
+
+    abstract class RightHandParameter : StationParameter
+    {
+        internal RightHandParameter()
+        {
+            Station = SetupStation.k_StationName;
+            Substation = SetupStation.k_RightHandSubstationName;
+        }
+    }
+
+    [Serializable]
+    sealed class RightHandLocomotionTypeInteraction : RightHandParameter { }
+
+    [Serializable]
+    sealed class RightHandMovementDirectionInteraction : RightHandParameter { }
+
+    [Serializable]
+    sealed class RightHandTurnStyleInteraction : RightHandParameter { }
 
     /// <summary>
     /// Editor event used to send <c>XRContent</c> interaction analytics data.
