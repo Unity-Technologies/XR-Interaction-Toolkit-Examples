@@ -1,0 +1,3 @@
+namespace Oculus.Platform.Deprecated
+{
+}

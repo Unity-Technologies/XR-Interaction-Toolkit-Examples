@@ -1,0 +1,173 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae5a46bda3295124c99b0e6537ac7252, type: 3}
+  m_Name: Shapes Demo - WitConfiguration
+  m_EditorClassIdentifier: 
+  _clientAccessToken: JYSZFUVTNXFZ4N3LAHJMDS6JOET2IBVP
+  _appInfo:
+    name: voicesdk_samples_shapes
+    id: 04b6d9fc-60b7-4d9e-8473-9290b9d1243f
+    lang: en
+    isPrivate: 0
+    createdAt: 2023-04-04T10:35:19-0700
+    trainingStatus: 1
+    lastTrainDuration: 36
+    lastTrainedAt: 2023-04-04T10:36:17-0700
+    nextTrainAt: 2023-04-04T10:35:41-0700
+    intents:
+    - id: 196347333139222
+      name: change_color
+      entities:
+      - name: color:color
+        id: 629054192387147
+      - name: shape:shape
+        id: 239839848416213
+    entities:
+    - name: color
+      id: 183423817885903
+      lookups:
+      - free-text
+      - keywords
+      roles:
+      - name: color
+        id: 629054192387147
+      keywords:
+      - keyword: black
+        synonyms:
+        - black
+      - keyword: blue
+        synonyms:
+        - blue
+      - keyword: brown
+        synonyms:
+        - brown
+      - keyword: gold
+        synonyms:
+        - gold
+      - keyword: green
+        synonyms:
+        - green
+      - keyword: magenta
+        synonyms:
+        - magenta
+      - keyword: maroon
+        synonyms:
+        - maroon
+        - red
+      - keyword: orange
+        synonyms:
+        - orange
+      - keyword: pink
+        synonyms:
+        - pink
+      - keyword: purple
+        synonyms:
+        - purple
+      - keyword: red
+        synonyms:
+        - red
+      - keyword: violet
+        synonyms:
+        - violet
+      - keyword: white
+        synonyms:
+        - white
+      - keyword: yellow
+        synonyms:
+        - yellow
+    - name: shape
+      id: 2277400329106527
+      lookups:
+      - keywords
+      roles:
+      - name: shape
+        id: 239839848416213
+      keywords:
+      - keyword: capsule
+        synonyms:
+        - capsule
+      - keyword: cube
+        synonyms:
+        - cube
+        - square
+      - keyword: cylinder
+        synonyms:
+        - cylinder
+        - tube
+      - keyword: sphere
+        synonyms:
+        - ball
+        - sphere
+    traits: []
+    voices:
+    - name: Charlie
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - fast
+      - projected
+    - name: Cooper
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: Prospector
+      locale: en_US
+      gender: male
+      styles:
+      - default
+    - name: Rebecca
+      locale: en_US
+      gender: female
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: Vampire
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    composer:
+      canvases: []
+  _configurationId: 4e21a24e472ab684e84db753427d5687
+  timeoutMS: 10000
+  endpointConfiguration:
+    _uriScheme: 
+    _authority: 
+    _port: 0
+    _witApiVersion: 
+    _message: 
+    _speech: 
+    _dictation: 
+    _synthesize: 
+    _event: 
+    _converse: 
+  isDemoOnly: 1
+  useConduit: 0
+  _manifestLocalPath: ConduitManifest-63301a14-cdfe-465a-91c0-0d8db67feb7f.json
+  excludedAssemblies:
+  - Oculus.Voice.Demo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - Meta.WitAi.Samples, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  relaxedResolution: 0

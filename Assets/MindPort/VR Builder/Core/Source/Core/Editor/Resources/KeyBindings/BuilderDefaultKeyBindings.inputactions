@@ -1,0 +1,115 @@
+{
+    "name": "BuilderDefaultKeyBindings",
+    "maps": [
+        {
+            "name": "Default",
+            "id": "4907d911-b591-428c-8409-4b57ad6b6293",
+            "actions": [
+                {
+                    "name": "MoveToNextCamera",
+                    "type": "Button",
+                    "id": "96108133-ecf3-41a8-9047-295ec8f67b34",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "MoveToPreviousCamera",
+                    "type": "Button",
+                    "id": "49b1081e-863f-421a-ba26-2255e3d8b79b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "SetToUser",
+                    "type": "Button",
+                    "id": "f9fc1c8a-c707-48dd-98a6-50aa98372a02",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "ToggleControlInformation",
+                    "type": "Button",
+                    "id": "da5c5560-076a-4805-8220-21915a8eac04",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "ToggleOverlay",
+                    "type": "Button",
+                    "id": "d7c182a8-20c6-4066-b692-bef82647e862",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "b0fc9185-671d-46ae-830b-83e273d26508",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveToNextCamera",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "88277608-6dc7-4d6c-a564-30c19f81d0fb",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveToPreviousCamera",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b71e8b44-a1aa-4ec3-8837-bc36b4420477",
+                    "path": "<Keyboard>/0",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SetToUser",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e101b579-9874-4d2b-9ff4-7e0f5a2649d9",
+                    "path": "<Keyboard>/f10",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ToggleControlInformation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b048477d-15ed-4d22-b6ab-a05102898808",
+                    "path": "<Keyboard>/f9",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ToggleOverlay",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "FocusKeyboard",
+            "id": "1d1d3b5f-42db-477d-835d-f024c9306c29",
+            "actions": [],
+            "bindings": []
+        }
+    ],
+    "controlSchemes": []
+}

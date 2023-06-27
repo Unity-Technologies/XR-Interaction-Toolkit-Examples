@@ -1,0 +1,142 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae5a46bda3295124c99b0e6537ac7252, type: 3}
+  m_Name: Chess Demo with Conduit- WitConfiguration
+  m_EditorClassIdentifier: 
+  _clientAccessToken: GV4WSCFK2RIVVTWSPWQDYZGJILZROSTO
+  _appInfo:
+    name: chessboard
+    id: 463950519194166
+    lang: en
+    isPrivate: 0
+    createdAt: 2023-03-06T09:54:33-0800
+    trainingStatus: 1
+    lastTrainDuration: 26
+    lastTrainedAt: 2023-03-06T10:31:11-0800
+    nextTrainAt: 2023-03-06T10:30:45-0800
+    intents:
+    - id: 148519308100093
+      name: MoveChessPiece
+      entities:
+      - name: letter:letter
+        id: 2773029599516990
+      - name: number:number
+        id: 892768801945847
+    entities:
+    - name: letter
+      id: 974441083986802
+      lookups:
+      - free-text
+      - keywords
+      roles:
+      - name: letter
+        id: 2773029599516990
+      keywords:
+      - keyword: A
+        synonyms:
+        - a
+      - keyword: B
+        synonyms:
+        - b
+    - name: number
+      id: 588032953204094
+      lookups:
+      - free-text
+      - keywords
+      roles:
+      - name: number
+        id: 892768801945847
+      keywords:
+      - keyword: Eight
+        synonyms:
+        - 8
+        - eight
+      - keyword: One
+        synonyms:
+        - 1
+        - One
+      - keyword: Three
+        synonyms:
+        - 3
+        - Three
+        - three
+      - keyword: Two
+        synonyms:
+        - 2
+        - Two
+      - keyword: Zero
+        synonyms:
+        - 4
+        - four
+    traits: []
+    voices:
+    - name: Charlie
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - fast
+      - projected
+    - name: Cooper
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: Prospector
+      locale: en_US
+      gender: male
+      styles:
+      - default
+    - name: Rebecca
+      locale: en_US
+      gender: female
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: Vampire
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    composer:
+      canvases: []
+  _configurationId: 4e21a24e472ab684e84db753427d5687
+  timeoutMS: 10000
+  endpointConfiguration:
+    _uriScheme: 
+    _authority: 
+    _port: 0
+    _witApiVersion: 
+    _message: 
+    _speech: 
+    _dictation: 
+    _synthesize: 
+    _event: 
+    _converse: 
+  isDemoOnly: 1
+  useConduit: 1
+  _manifestLocalPath: ConduitManifest-63301a14-cdfe-465a-91c0-0d8db67feb7f.json
+  excludedAssemblies:
+  - Meta.WitAi.Samples, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  relaxedResolution: 0

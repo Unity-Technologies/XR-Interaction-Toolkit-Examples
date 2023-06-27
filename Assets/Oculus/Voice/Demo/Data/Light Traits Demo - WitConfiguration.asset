@@ -1,0 +1,174 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae5a46bda3295124c99b0e6537ac7252, type: 3}
+  m_Name: Light Traits Demo - WitConfiguration
+  m_EditorClassIdentifier: 
+  _clientAccessToken: UNAWXMYICVVMMZWJL2RHKEXPXL6J6HRX
+  _appInfo:
+    name: traits_demo
+    id: 378845660994729
+    lang: en
+    isPrivate: 0
+    createdAt: 2022-08-15T15:39:23-0700
+    trainingStatus: 1
+    lastTrainDuration: 1129
+    lastTrainedAt: 2022-08-26T00:53:27-0700
+    nextTrainAt: 2022-08-26T00:34:38-0700
+    intents:
+    - id: 3313618735625337
+      name: wit_change_state
+      entities:
+      - name: wit_object:wit_object
+        id: 858948758418423
+    entities:
+    - name: Color
+      id: 1234442204087163
+      lookups:
+      - free-text
+      - keywords
+      roles:
+      - name: Color
+        id: 1873569336336818
+      keywords:
+      - keyword: Black
+        synonyms: []
+      - keyword: Blue
+        synonyms: []
+      - keyword: Brown
+        synonyms: []
+      - keyword: Gray
+        synonyms: []
+      - keyword: Green
+        synonyms: []
+      - keyword: Orange
+        synonyms: []
+      - keyword: Pink
+        synonyms: []
+      - keyword: Purple
+        synonyms: []
+      - keyword: Red
+        synonyms: []
+      - keyword: White
+        synonyms: []
+      - keyword: Yellow
+        synonyms: []
+    - name: LightState
+      id: 5938964576180357
+      lookups:
+      - free-text
+      - keywords
+      roles:
+      - name: LightState
+        id: 849333606300667
+      keywords:
+      - keyword: Off
+        synonyms: []
+      - keyword: On
+        synonyms: []
+    - name: Shape
+      id: 847477343210682
+      lookups:
+      - free-text
+      - keywords
+      roles:
+      - name: Shape
+        id: 1202784640666618
+      keywords:
+      - keyword: Capsule
+        synonyms: []
+      - keyword: Cube
+        synonyms: []
+      - keyword: Cylinder
+        synonyms: []
+      - keyword: Sphere
+        synonyms: []
+    - name: wit_object
+      id: 584680556610702
+      lookups:
+      - free-text
+      - keywords
+      roles:
+      - name: wit_object
+        id: 858948758418423
+      keywords:
+      - keyword: light
+        synonyms:
+        - light
+    traits:
+    - name: wit$on_off
+      id: 535a80f0-6922-4680-b678-0576f248cdcc
+      values:
+      - id: 2701187510165547
+        value: off
+      - id: 882247432292479
+        value: on
+    voices:
+    - name: Charlie
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - fast
+      - projected
+    - name: Cooper
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: Prospector
+      locale: en_US
+      gender: male
+      styles:
+      - default
+    - name: Rebecca
+      locale: en_US
+      gender: female
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: Vampire
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    composer:
+      canvases: []
+  _configurationId: 4d0b4b78-ad03-4294-8500-3054d1acfeb0
+  timeoutMS: 10000
+  endpointConfiguration:
+    _uriScheme: 
+    _authority: 
+    _port: 0
+    _witApiVersion: 
+    _message: 
+    _speech: 
+    _dictation: 
+    _synthesize: 
+    _event: 
+    _converse: 
+  isDemoOnly: 1
+  useConduit: 1
+  _manifestLocalPath: ConduitManifest-565ac746-634c-4383-80a1-c35291949d85.json
+  excludedAssemblies: []
+  relaxedResolution: 0

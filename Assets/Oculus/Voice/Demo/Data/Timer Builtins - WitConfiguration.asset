@@ -1,0 +1,356 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae5a46bda3295124c99b0e6537ac7252, type: 3}
+  m_Name: Timer Builtins - WitConfiguration
+  m_EditorClassIdentifier: 
+  _clientAccessToken: HOKEABS7HPIQVSRSVWRPTTV75TQJ5QBP
+  _appInfo:
+    name: Built-in Models
+    id: voiceSDK_en
+    lang: en
+    isPrivate: 0
+    createdAt: 
+    trainingStatus: 0
+    lastTrainDuration: 0
+    lastTrainedAt: 
+    nextTrainAt: 
+    intents:
+    - id: 897504424223811
+      name: wit$add_time_timer
+      entities: []
+    - id: 541438527164499
+      name: wit$add_to_playlist
+      entities: []
+    - id: 887283025240109
+      name: wit$cancel
+      entities: []
+    - id: 829935924385746
+      name: wit$check_weather_condition
+      entities: []
+    - id: 306952631193690
+      name: wit$confirmation
+      entities: []
+    - id: 377154377139380
+      name: wit$create_alarm
+      entities: []
+    - id: 418752679692656
+      name: wit$create_playlist
+      entities: []
+    - id: 365611011710102
+      name: wit$create_timer
+      entities: []
+    - id: 1033582527390432
+      name: wit$decrease_volume
+      entities: []
+    - id: 883987129203457
+      name: wit$delete_alarm
+      entities: []
+    - id: 247929240550715
+      name: wit$delete_playlist
+      entities: []
+    - id: 557555652118025
+      name: wit$delete_timer
+      entities: []
+    - id: 421700242885150
+      name: wit$dislike_music
+      entities: []
+    - id: 270102601621744
+      name: wit$fast_forward_track
+      entities: []
+    - id: 387498056115658
+      name: wit$get_alarms
+      entities: []
+    - id: 415840899887272
+      name: wit$get_date
+      entities: []
+    - id: 438703477461413
+      name: wit$get_sunrise
+      entities: []
+    - id: 375415767405106
+      name: wit$get_sunset
+      entities: []
+    - id: 4289162121138059
+      name: wit$get_temperature
+      entities: []
+    - id: 232518205474455
+      name: wit$get_time
+      entities: []
+    - id: 893990681247881
+      name: wit$get_time_until_date
+      entities: []
+    - id: 393845445654783
+      name: wit$get_timer
+      entities: []
+    - id: 549084829680351
+      name: wit$get_track_info
+      entities: []
+    - id: 3011049075798095
+      name: wit$get_weather
+      entities: []
+    - id: 1014318852665058
+      name: wit$go_back
+      entities: []
+    - id: 1031968647622673
+      name: wit$go_forward
+      entities: []
+    - id: 284911926808943
+      name: wit$increase_volume
+      entities: []
+    - id: 547658879873191
+      name: wit$like_music
+      entities: []
+    - id: 236590765151252
+      name: wit$loop_music
+      entities: []
+    - id: 4404756796280183
+      name: wit$negation
+      entities: []
+    - id: 4432284356859008
+      name: wit$nevermind
+      entities: []
+    - id: 831865090860258
+      name: wit$open_resource
+      entities: []
+    - id: 3014340998807022
+      name: wit$pause
+      entities: []
+    - id: 162448539383689
+      name: wit$pause_music
+      entities: []
+    - id: 629110521422335
+      name: wit$pause_timer
+      entities: []
+    - id: 1749588415235689
+      name: wit$play
+      entities: []
+    - id: 866056607377214
+      name: wit$play_music
+      entities: []
+    - id: 258248752970902
+      name: wit$play_podcast
+      entities: []
+    - id: 1030753921087273
+      name: wit$previous_track
+      entities: []
+    - id: 3112795525710499
+      name: wit$remove_from_playlist
+      entities: []
+    - id: 1641652012695476
+      name: wit$repeat_response
+      entities: []
+    - id: 391429655722707
+      name: wit$replay_track
+      entities: []
+    - id: 407662237413103
+      name: wit$resume
+      entities: []
+    - id: 658111892259804
+      name: wit$resume_music
+      entities: []
+    - id: 229892845779856
+      name: wit$resume_timer
+      entities: []
+    - id: 252614883454919
+      name: wit$rewind_track
+      entities: []
+    - id: 4540198562705611
+      name: wit$select_item
+      entities: []
+    - id: 2081412638678468
+      name: wit$share
+      entities: []
+    - id: 588748799212186
+      name: wit$shuffle_playlist
+      entities: []
+    - id: 917880522495837
+      name: wit$silence_alarm
+      entities: []
+    - id: 329368558953931
+      name: wit$skip_track
+      entities: []
+    - id: 2842638329380270
+      name: wit$snooze_alarm
+      entities: []
+    - id: 411892023684057
+      name: wit$stop
+      entities: []
+    - id: 238496474960073
+      name: wit$stop_music
+      entities: []
+    - id: 151481930517141
+      name: wit$subtract_time_timer
+      entities: []
+    - id: 620928052622542
+      name: wit$unloop_music
+      entities: []
+    - id: 1315332902220652
+      name: wit$unshuffle_playlist
+      entities: []
+    entities:
+    - name: wit$amount_of_money
+      id: 535a8110-2ea7-414f-a024-cf928b076d17
+      lookups: []
+      roles:
+      - name: amount_of_money
+        id: 388070769579971
+      keywords: []
+    - name: wit$datetime
+      id: 535a810f-8911-4bfe-976a-6e3c193f1251
+      lookups: []
+      roles:
+      - name: datetime
+        id: 457759871937748
+      keywords: []
+    - name: wit$distance
+      id: 535a80ff-e693-40c1-b67e-6f3e8e7144b8
+      lookups: []
+      roles:
+      - name: distance
+        id: 376395644039832
+      keywords: []
+    - name: wit$duration
+      id: 535a80fb-4be9-4991-a48e-8b2ca4ef6e54
+      lookups: []
+      roles:
+      - name: duration
+        id: 4245444588888025
+      keywords: []
+    - name: wit$email
+      id: 535a8107-7041-417d-b500-670b30d5267e
+      lookups: []
+      roles:
+      - name: email
+        id: 990197371827121
+      keywords: []
+    - name: wit$location
+      id: 535a80ff-6399-4653-8b2a-c770dd014965
+      lookups: []
+      roles:
+      - name: location
+        id: 699151467676773
+      keywords: []
+    - name: wit$phone_number
+      id: 535a810c-3885-41fe-a36f-3adfff96d72c
+      lookups: []
+      roles:
+      - name: phone_number
+        id: 535400004231868
+      keywords: []
+    - name: wit$quantity
+      id: 53d850ab-b009-4da5-9201-180aa916c5d4
+      lookups: []
+      roles:
+      - name: quantity
+        id: 390632932585329
+      keywords: []
+    - name: wit$temperature
+      id: 535a80f3-766b-49e7-bfb9-f4dedafc10aa
+      lookups: []
+      roles:
+      - name: temperature
+        id: 603855104116898
+      keywords: []
+    - name: wit$url
+      id: 535a80e6-23ec-43de-9c60-ed1d7f450157
+      lookups: []
+      roles:
+      - name: url
+        id: 2978877842431482
+      keywords: []
+    - name: wit$volume
+      id: 5a0cd7ec-754d-4ad5-abfa-413275a5f674
+      lookups: []
+      roles:
+      - name: volume
+        id: 358779385927032
+      keywords: []
+    traits:
+    - name: wit$bye
+      id: 5900cc2e-09ed-4764-800c-11e7566acfac
+      values:
+      - id: 955a38ae-f188-46ba-ab6d-4988c5a4bea6
+        value: true
+    - name: wit$greetings
+      id: 5900cc2d-41b7-45b2-b21f-b950d3ae3c5c
+      values:
+      - id: 547401529279585
+        value: true
+    - name: wit$sentiment
+      id: 5ac2b50a-44e4-466e-9d49-bad6bd40092c
+      values:
+      - id: 561371444570330
+        value: negative
+      - id: 1621429681354257
+        value: neutral
+      - id: 2522989351346070
+        value: positive
+    - name: wit$thanks
+      id: 5900cc2d-867c-4bf0-beb6-ef6e6bf45ca5
+      values:
+      - id: e5cce196-9948-420c-a9fb-9c2fd201adaf
+        value: true
+    voices:
+    - name: Charlie
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - fast
+      - projected
+    - name: Cooper
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: Prospector
+      locale: en_US
+      gender: male
+      styles:
+      - default
+    - name: Rebecca
+      locale: en_US
+      gender: female
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: Vampire
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+  _configurationId: 74f17110584875d438c76cba2242da14
+  timeoutMS: 10000
+  endpointConfiguration:
+    uriScheme: 
+    authority: 
+    port: 0
+    witApiVersion: 
+    speech: 
+    message: 
+    dictation: 
+  isDemoOnly: 1
+  useConduit: 0
+  _manifestLocalPath: 
+  excludedAssemblies: []
+  relaxedResolution: 0
