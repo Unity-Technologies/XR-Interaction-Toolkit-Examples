@@ -1,6 +1,6 @@
 # Physics Interactables
 
-![Opening a physics-based door with VR controls](Images/Station-08-PhysicsInteractables.jpg)
+![Opening a physics-based door with VR controls](Images/Station-09-PhysicsInteractables.jpg)
 
 ## Station descriptor
 
@@ -26,7 +26,7 @@ The important configurations elements are that **physics joints** have preproces
 
 ## Advanced examples
 
-![Opening a physics-based file cabinet with VR controls](Images/Station-08-PhysicsInteractables-Advanced.jpg)
+![Opening a physics-based file cabinet with VR controls](Images/Station-09-PhysicsInteractables-Advanced.jpg)
 
 The advanced examples make use of a custom **physics joint** called the **Transform Joint**. This joint combines the best of both worlds for low-latency interactions combined with realistic values for exerting force.
 

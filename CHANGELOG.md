@@ -6,6 +6,27 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 <!-- Headers should be listed in this order: Added, Changed, Deprecated, Removed, Fixed, Security -->
 
+## [2.5.3] - 2024-03-25
+
+### Changed
+ - Updated XR Interaction Toolkit to 2.5.3
+
+## [2.5.2] - 2024-03-06
+
+### Added
+ - New station to show how to utilize interaction focus state
+ - New station with different types of climbables
+
+### Changed
+ - Updated XR Interaction Toolkit to 2.5.2
+ - Updated Unity Editor to 2021.3.33f1
+
+## [2.4.0] - 2023-06-22
+
+### Changed
+ - Updated XR Interaction Toolkit to 2.4.0
+ - Updated Unity Editor to 2021.3.27f1
+
 ## [2.3.2] - 2023-05-09
 ### Added
  - Added Gaze station

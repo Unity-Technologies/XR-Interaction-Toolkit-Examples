@@ -1,6 +1,6 @@
 # 2D UI
 
-![World space 2D UI interactions with VR](Images/Station-06-2DUI.jpg)
+![World space 2D UI interactions with VR](Images/Station-07-2DUI.jpg)
 
 ## Station descriptor
 

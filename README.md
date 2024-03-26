@@ -1,8 +1,8 @@
-# XR Interaction Toolkit Examples - Version 2.3.2
+# XR Interaction Toolkit Examples - Version 2.5.3
 
 ## Introduction
 
-This project provides examples that use Unity's [XR Interaction Toolkit](https://docs.unity3d.com/Manual/com.unity.xr.interaction.toolkit.html) (XRI) to demonstrate its functionality with example assets and behaviors.
+This project provides examples that use Unity's [XR Interaction Toolkit](https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.5/manual/index.html) (XRI) to demonstrate its functionality with example assets and behaviors.
 The intention of this project is to provide a means for getting started with the features in the XR Interaction Toolkit package.
 
 > Note: If you are looking for the original XRI Examples project, that has been archived into two separate branches [Classic 1.0](https://github.com/Unity-Technologies/XR-Interaction-Toolkit-Examples/tree/1.0/classic) and [Classic 2.2](https://github.com/Unity-Technologies/XR-Interaction-Toolkit-Examples/tree/classic/2.2). Both of these branches still have both the `AR` and `VR` projects available.
@@ -12,7 +12,7 @@ The intention of this project is to provide a means for getting started with the
 ### Requirements
 The current version of the XRI Examples is compatible with the following versions of the Unity Editor:
 
-* 2020.3 and later
+* 2021.3 and later
 
 ### Downloading the project
 
@@ -20,7 +20,7 @@ The current version of the XRI Examples is compatible with the following version
     1. Click the **⤓ Code** button on this page to get the URL to clone with Git or click **Download ZIP** to get a copy of this repository that you can extract
 1. Open a project in Unity
     1. Download, install, and run [Unity Hub](https://unity3d.com/get-unity/download)
-    1. In the **Installs** tab, select **Locate** or **Add** to find or install Unity 2020.3 LTS or later. Include the **Windows Build Support (IL2CPP)** module if building for PC, and the **Android Build Support** if building for Android (for example, Meta Quest).
+    1. In the **Installs** tab, select **Locate** or **Add** to find or install Unity 2021.3 LTS or later. Include the **Windows Build Support (IL2CPP)** module if building for PC, and the **Android Build Support** if building for Android (for example, Meta Quest).
     1. In the **Projects** tab, click **Add**
     1. Browse to folder where you downloaded a copy of this repository and click **Select Folder**
     1. Verify the project has been added as **XR-Interaction-Toolkit-Examples**, and click on it to open the project
@@ -41,10 +41,12 @@ The following stations are available in the XRI Examples:
 * [Station 2: Grab Interactables](Documentation/GrabInteractables.md) - Basic object manipulation.
 * [Station 3: Activate Interactables](Documentation/ActivateInteractables.md) - Manipulation of objects that can be triggered by the user.
 * [Station 4: Socket Interactors](Documentation/SocketInteractors.md) - Manipulation of objects that can snap to specific positions.
-* [Station 5: Gaze Interactions](Documentation/Gaze.md) - Leverage the eye-tracked or head-based gaze interactor to add assistive interaction to your projects.
-* [Station 6: 2D UI](Documentation/UI-2D.md) - Creation and interaction with [world space](https://docs.unity3d.com/Packages/com.unity.ugui@1.0/manual/UICanvas.html#world-space) 2D UI.
-* [Station 7: 3D UI](Documentation/UI-3D.md) - Creation and interaction with 3D constrained controls.
-* [Station 8: Physics Interactables](Documentation/PhysicsInteractables.md) - Best practices for combining physics and XR input.
+* [Station 5: Gaze Interaction](Documentation/Gaze.md) - Leverage the eye-tracked or head-based gaze interactor to add assistive interaction.
+* [Station 6: Focus Interaction](Documentation/Focus.md) - Interaction with focused objects.
+* [Station 7: 2D UI](Documentation/UI-2D.md) - Creation and interaction with [world space](https://docs.unity3d.com/Packages/com.unity.ugui@1.0/manual/UICanvas.html#world-space) 2D UI.
+* [Station 8: 3D UI](Documentation/UI-3D.md) - Creation and interaction with 3D constrained controls.
+* [Station 9: Physics Interactables](Documentation/PhysicsInteractables.md) - Best practices for combining physics and XR input.
+* [Station 10: Climb Interactables](Documentation/ClimbInteractables.md) - Interaction with objects that allow for climbing.
 
 For a list of new features and deprecations, see [XRI Examples Changelog](CHANGELOG.md).
 
