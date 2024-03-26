@@ -270,6 +270,12 @@ namespace UnityEngine.XR.Content.Interaction
             }
         }
 
+        void Awake()
+        {
+            if (m_ComfortMode == null)
+                Debug.LogWarning("Comfort Mode GameObject is not set in the Locomotion Manager.", this);
+        }
+
         void OnEnable()
         {
             SetMoveScheme(m_LeftHandLocomotionType, true);

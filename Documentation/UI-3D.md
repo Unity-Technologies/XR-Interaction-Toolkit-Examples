@@ -1,6 +1,6 @@
 # 3D UI
 
-![3D UI interactables - Levers, joysticks, and wheels](Images/Station-07-3DUI.jpg)
+![3D UI interactables - Levers, joysticks, and wheels](Images/Station-08-3DUI.jpg)
 
 ## Station descriptor
 
@@ -30,6 +30,6 @@ Additionally, this station demonstrates the usage of the **Target Filter** featu
 
 ## Advanced examples
 
-![3D UI interactables used to control a claw game](Images/Station-07-3DUI-Advanced.jpg)
+![3D UI interactables used to control a claw game](Images/Station-08-3DUI-Advanced.jpg)
 
 The advanced example of the 3D UI station utilizes a **Joystick** control and a **Push Button** to simulate a classic arcade claw game. Enjoy your plushy farm animal, they are grab interactable objects as well.

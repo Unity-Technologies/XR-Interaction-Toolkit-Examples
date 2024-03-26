@@ -8,7 +8,7 @@ The intention of this project is to provide a means for getting started with the
 ## Requirements
 The current version of the XRI Examples is compatible with the following versions of the Unity Editor:
 
-* 2020.3 and later
+* 2021.3 and later
 
 ## General setup
 
@@ -26,10 +26,12 @@ The following stations are available in the XRI Examples:
 * [Station 2: Grab Interactables](GrabInteractables.md) - Basic object manipulation.
 * [Station 3: Activate Interactables](ActivateInteractables.md) - Manipulation of objects that can be triggered by the user.
 * [Station 4: Socket Interactors](SocketInteractors.md) - Manipulation of objects that can snap to specific positions.
-* [Station 5: Gaze Interaction](Gaze.md) - Object interaction with gaze.
-* [Station 6: 2D UI](UI-2D.md) - Creation and interaction with [world space](https://docs.unity3d.com/Packages/com.unity.ugui@1.0/manual/UICanvas.html#world-space) 2D UI.
-* [Station 7: 3D UI](UI-3D.md) - Creation and interaction with 3D constrained controls.
-* [Station 8: Physics Interactables](PhysicsInteractables.md) - Best practices for combining physics and XR input.
+* [Station 5: Gaze Interaction](Gaze.md) - Leverage the eye-tracked or head-based gaze interactor to add assistive interaction.
+* [Station 6: Focus Interaction](Focus.md) - Interaction with focused objects.
+* [Station 7: 2D UI](UI-2D.md) - Creation and interaction with [world space](https://docs.unity3d.com/Packages/com.unity.ugui@1.0/manual/UICanvas.html#world-space) 2D UI.
+* [Station 8: 3D UI](UI-3D.md) - Creation and interaction with 3D constrained controls.
+* [Station 9: Physics Interactables](PhysicsInteractables.md) - Best practices for combining physics and XR input.
+* [Station 10: Climb Interactables](ClimbInteractables.md) - Interaction with objects that allow for climbing.
 
 For a list of new features and deprecations, see [XRI Examples Changelog](../CHANGELOG.md).
 

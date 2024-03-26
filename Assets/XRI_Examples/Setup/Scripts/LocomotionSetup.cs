@@ -292,10 +292,14 @@ namespace UnityEngine.XR.Content.Interaction
         {
             if (m_Manager == null)
             {
-                Debug.LogError($"Reference to the {nameof(LocomotionManager)} is not set or the object has been destroyed," +
-                    " configuring locomotion settings from the menu will not be possible." +
-                    " Ensure the value has been set in the Inspector.", this);
-                return false;
+                m_Manager = FindObjectOfType<LocomotionManager>(true);
+                if (m_Manager == null)
+                {
+                    Debug.LogError($"Reference to the {nameof(LocomotionManager)} is not set or the object has been destroyed," +
+                        " configuring locomotion settings from the menu will not be possible." +
+                        " Ensure the value has been set in the Inspector.", this);
+                    return false;
+                }
             }
 
             if (m_Manager.dynamicMoveProvider == null)
