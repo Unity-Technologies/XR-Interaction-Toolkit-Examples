@@ -1,7 +1,7 @@
 namespace UnityEngine.XR.Content.Interaction
 {
     /// <summary>
-    /// This component is designed to easily toggle a specific component and GameObject on or off when an object
+    /// This component is designed to easily toggle a specific component on or off when an object
     /// enters the specified <see cref="triggerVolume"/>.
     /// </summary>
     [RequireComponent(typeof(Collider))]
@@ -50,25 +50,11 @@ namespace UnityEngine.XR.Content.Interaction
         }
 
         [SerializeField]
-        [Tooltip("GameObject to set the enabled state for. Will set the value to the Enable On Entry value upon entry and revert to original value on exit.")]
-        GameObject m_GameObjectToToggle;
-
-        /// <summary>
-        /// GameObject to set the enabled state for. Will set the value to the
-        /// Enable On Entry value upon entry and revert to original value on exit.
-        /// </summary>
-        public GameObject gameObjectToToggle
-        {
-            get => m_GameObjectToToggle;
-            set => m_GameObjectToToggle = value;
-        }
-
-        [SerializeField]
-        [Tooltip("Sets whether to enable or disable the Component To Toggle and GameObject To Toggle upon entry into the Trigger Volume.")]
+        [Tooltip("Sets whether to enable or disable the Component To Toggle upon entry into the Trigger Volume.")]
         bool m_EnableOnEntry = true;
 
         /// <summary>
-        /// Sets whether to enable or disable the Component To Toggle and GameObject To Toggle upon entry into the Trigger Volume.
+        /// Sets whether to enable or disable the Component To Toggle upon entry into the Trigger Volume.
         /// </summary>
         public bool enableOnEntry
         {
@@ -76,8 +62,7 @@ namespace UnityEngine.XR.Content.Interaction
             set => m_EnableOnEntry = value;
         }
 
-        bool m_InitialComponentStateOnEntry;
-        bool m_InitialGameObjectStateOnEntry;
+        bool m_InitialStateOnEntry;
 
         void Start()
         {
@@ -95,17 +80,8 @@ namespace UnityEngine.XR.Content.Interaction
         {
             if (other != null && other == m_ActivationObject)
             {
-                if (m_GameObjectToToggle != null)
-                {
-                    m_InitialGameObjectStateOnEntry = m_GameObjectToToggle.activeSelf;
-                    m_GameObjectToToggle.SetActive(m_EnableOnEntry);
-                }
-
-                if (m_ComponentToToggle != null)
-                {
-                    m_InitialComponentStateOnEntry = m_ComponentToToggle.enabled;
-                    m_ComponentToToggle.enabled = m_EnableOnEntry;
-                }
+                m_InitialStateOnEntry = m_ComponentToToggle.enabled;
+                m_ComponentToToggle.enabled = m_EnableOnEntry;
             }
         }
 
@@ -113,11 +89,7 @@ namespace UnityEngine.XR.Content.Interaction
         {
             if (other != null && other == m_ActivationObject)
             {
-                if (m_ComponentToToggle != null)
-                    m_ComponentToToggle.enabled = m_InitialComponentStateOnEntry;
-
-                if (m_GameObjectToToggle != null)
-                    m_GameObjectToToggle.SetActive(m_InitialGameObjectStateOnEntry);
+                m_ComponentToToggle.enabled = m_InitialStateOnEntry;
             }
         }
     }
