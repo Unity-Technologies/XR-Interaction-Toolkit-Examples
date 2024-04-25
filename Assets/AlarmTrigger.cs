@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AlarmTrigger : MonoBehaviour
 {
-    public Audiosource alarm;
+    public AudioSource alarm;
     void Start()
     {
         alarm = this.GetComponent<AudioSource>();
@@ -17,6 +17,7 @@ void OnCollisionEnter(Collision collision)
         {
             alarm.Play();
         }
+
         alarm.Play();
     }
 }
