@@ -21,3 +21,4 @@ void OnCollisionEnter(Collision collision)
         alarm.Play();
     }
 }
+
