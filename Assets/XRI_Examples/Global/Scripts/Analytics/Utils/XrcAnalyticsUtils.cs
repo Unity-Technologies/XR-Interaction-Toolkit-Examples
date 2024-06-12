@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 namespace UnityEngine.XR.Content.Interaction.Analytics
 {
@@ -81,7 +83,7 @@ namespace UnityEngine.XR.Content.Interaction.Analytics
 
         static void OnGrabInteractable(SelectEnterEventArgs args, StationParameter parameter)
         {
-            if (!(args.interactorObject is XRBaseControllerInteractor))
+            if (!(args.interactorObject is XRBaseInputInteractor))
                 return;
 
             XrcAnalytics.interactionEvent.Send(parameter);

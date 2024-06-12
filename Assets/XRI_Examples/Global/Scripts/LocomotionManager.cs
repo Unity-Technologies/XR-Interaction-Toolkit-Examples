@@ -1,4 +1,5 @@
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Locomotion.Turning;
 using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 
 namespace UnityEngine.XR.Content.Interaction
@@ -8,10 +9,10 @@ namespace UnityEngine.XR.Content.Interaction
     /// </summary>
     public class LocomotionManager : MonoBehaviour
     {
-        const ContinuousMoveProviderBase.GravityApplicationMode k_DefaultGravityApplicationMode =
-            ContinuousMoveProviderBase.GravityApplicationMode.AttemptingMove;
-        const ConstrainedMoveProvider.GravityApplicationMode k_DefaultGravityMode =
-            ConstrainedMoveProvider.GravityApplicationMode.AttemptingMove;
+#pragma warning disable CS0618 // Type or member is obsolete
+        const UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement.ConstrainedMoveProvider.GravityApplicationMode k_DefaultGravityMode =
+            UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement.ConstrainedMoveProvider.GravityApplicationMode.AttemptingMove;
+#pragma warning restore CS0618 // Type or member is obsolete
 
         /// <summary>
         /// Sets which movement control scheme to use.
@@ -65,13 +66,12 @@ namespace UnityEngine.XR.Content.Interaction
 
         [SerializeField]
         [Tooltip("Stores the locomotion provider for smooth (continuous) turning.")]
-        ContinuousTurnProviderBase m_SmoothTurnProvider;
+        ContinuousTurnProvider m_SmoothTurnProvider;
 
         /// <summary>
         /// Stores the locomotion provider for smooth (continuous) turning.
         /// </summary>
-        /// <seealso cref="ContinuousTurnProviderBase"/>
-        public ContinuousTurnProviderBase smoothTurnProvider
+        public ContinuousTurnProvider smoothTurnProvider
         {
             get => m_SmoothTurnProvider;
             set => m_SmoothTurnProvider = value;
@@ -79,13 +79,12 @@ namespace UnityEngine.XR.Content.Interaction
 
         [SerializeField]
         [Tooltip("Stores the locomotion provider for snap turning.")]
-        SnapTurnProviderBase m_SnapTurnProvider;
+        SnapTurnProvider m_SnapTurnProvider;
 
         /// <summary>
         /// Stores the locomotion provider for snap turning.
         /// </summary>
-        /// <seealso cref="SnapTurnProviderBase"/>
-        public SnapTurnProviderBase snapTurnProvider
+        public SnapTurnProvider snapTurnProvider
         {
             get => m_SnapTurnProvider;
             set => m_SnapTurnProvider = value;
@@ -93,13 +92,13 @@ namespace UnityEngine.XR.Content.Interaction
 
         [SerializeField]
         [Tooltip("Stores the locomotion provider for two-handed grab movement.")]
-        TwoHandedGrabMoveProvider m_TwoHandedGrabMoveProvider;
+        UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement.TwoHandedGrabMoveProvider m_TwoHandedGrabMoveProvider;
 
         /// <summary>
         /// Stores the locomotion provider for two-handed grab movement.
         /// </summary>
         /// <seealso cref="TwoHandedGrabMoveProvider"/>
-        public TwoHandedGrabMoveProvider twoHandedGrabMoveProvider
+        public UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement.TwoHandedGrabMoveProvider twoHandedGrabMoveProvider
         {
             get => m_TwoHandedGrabMoveProvider;
             set => m_TwoHandedGrabMoveProvider = value;
@@ -107,11 +106,11 @@ namespace UnityEngine.XR.Content.Interaction
 
         [SerializeField]
         [Tooltip("Reference to the manager that mediates the left-hand controllers.")]
-        ActionBasedControllerManager m_LeftHandManager;
+        ControllerInputActionManager m_LeftHandManager;
 
         [SerializeField]
         [Tooltip("Reference to the manager that mediates the right-hand controllers.")]
-        ActionBasedControllerManager m_RightHandManager;
+        ControllerInputActionManager m_RightHandManager;
 
         [SerializeField]
         [Tooltip("Controls which movement control scheme to use for the left hand.")]
@@ -223,10 +222,11 @@ namespace UnityEngine.XR.Content.Interaction
                 m_TwoHandedGrabMoveProvider.rightGrabMoveProvider.useGravity = value;
                 if (value)
                 {
-                    m_DynamicMoveProvider.gravityApplicationMode = k_DefaultGravityApplicationMode;
+#pragma warning disable CS0618 // Type or member is obsolete
                     m_TwoHandedGrabMoveProvider.gravityMode = k_DefaultGravityMode;
                     m_TwoHandedGrabMoveProvider.leftGrabMoveProvider.gravityMode = k_DefaultGravityMode;
                     m_TwoHandedGrabMoveProvider.rightGrabMoveProvider.gravityMode = k_DefaultGravityMode;
+#pragma warning restore CS0618 // Type or member is obsolete
                 }
             }
         }
@@ -292,10 +292,11 @@ namespace UnityEngine.XR.Content.Interaction
             m_TwoHandedGrabMoveProvider.rightGrabMoveProvider.useGravity = m_UseGravity;
             if (m_UseGravity)
             {
-                m_DynamicMoveProvider.gravityApplicationMode = k_DefaultGravityApplicationMode;
+#pragma warning disable CS0618 // Type or member is obsolete
                 m_TwoHandedGrabMoveProvider.gravityMode = k_DefaultGravityMode;
                 m_TwoHandedGrabMoveProvider.leftGrabMoveProvider.gravityMode = k_DefaultGravityMode;
                 m_TwoHandedGrabMoveProvider.rightGrabMoveProvider.gravityMode = k_DefaultGravityMode;
+#pragma warning restore CS0618 // Type or member is obsolete
             }
 
             m_DynamicMoveProvider.enableFly = m_EnableFly;
