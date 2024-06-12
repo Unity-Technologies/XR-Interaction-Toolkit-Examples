@@ -1,4 +1,4 @@
-# XR Interaction Toolkit Examples - Version 3.0.1
+# XR Interaction Toolkit Examples - Version 3.0.3
 
 ## Introduction
 
