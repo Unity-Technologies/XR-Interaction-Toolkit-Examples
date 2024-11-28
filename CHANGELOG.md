@@ -6,6 +6,24 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 <!-- Headers should be listed in this order: Added, Changed, Deprecated, Removed, Fixed, Security -->
 
+## [3.0.7] - 2024-11-27
+
+### Added
+- Added snap volume to Teleportation Anchors to improve reticle behavior and make it easier to aim at.
+
+### Changed
+- Updated XR Interaction Toolkit to 3.0.7
+- Updated Input System to 1.11.2
+- Updated TextMeshPro to 3.0.9
+- Updated XR Plugin Management to 4.5.0
+- Updated Unity Editor to 2022.3.53f1
+- Changed Graphics API on Android from OpenGLES3 to Vulkan.
+
+### Fixed
+- Fixed Grab Move GameObject to be activated as a scene override to allow grab move to be controlled by the Locomotion Settings table.
+- Fixed duplicate Locomotion Manager in scenes.
+- Fixed main scene by removing extra spatial keyboard.
+
 ## [3.0.3] - 2024-06-12
 
 ### Changed
