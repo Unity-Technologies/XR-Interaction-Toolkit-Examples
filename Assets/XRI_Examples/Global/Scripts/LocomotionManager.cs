@@ -1,4 +1,5 @@
-using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Locomotion.Gravity;
+using UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement;
 using UnityEngine.XR.Interaction.Toolkit.Locomotion.Turning;
 using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 
@@ -9,11 +10,6 @@ namespace UnityEngine.XR.Content.Interaction
     /// </summary>
     public class LocomotionManager : MonoBehaviour
     {
-#pragma warning disable CS0618 // Type or member is obsolete
-        const UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement.ConstrainedMoveProvider.GravityApplicationMode k_DefaultGravityMode =
-            UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement.ConstrainedMoveProvider.GravityApplicationMode.AttemptingMove;
-#pragma warning restore CS0618 // Type or member is obsolete
-
         /// <summary>
         /// Sets which movement control scheme to use.
         /// </summary>
@@ -92,16 +88,30 @@ namespace UnityEngine.XR.Content.Interaction
 
         [SerializeField]
         [Tooltip("Stores the locomotion provider for two-handed grab movement.")]
-        UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement.TwoHandedGrabMoveProvider m_TwoHandedGrabMoveProvider;
+        TwoHandedGrabMoveProvider m_TwoHandedGrabMoveProvider;
 
         /// <summary>
         /// Stores the locomotion provider for two-handed grab movement.
         /// </summary>
         /// <seealso cref="TwoHandedGrabMoveProvider"/>
-        public UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement.TwoHandedGrabMoveProvider twoHandedGrabMoveProvider
+        public TwoHandedGrabMoveProvider twoHandedGrabMoveProvider
         {
             get => m_TwoHandedGrabMoveProvider;
             set => m_TwoHandedGrabMoveProvider = value;
+        }
+
+        [SerializeField]
+        [Tooltip("Stores the locomotion provider for gravity.")]
+        GravityProvider m_GravityProvider;
+
+        /// <summary>
+        /// Stores the locomotion provider for gravity.
+        /// </summary>
+        /// <seealso cref="GravityProvider"/>
+        public GravityProvider gravityProvider
+        {
+            get => m_GravityProvider;
+            set => m_GravityProvider = value;
         }
 
         [SerializeField]
@@ -216,18 +226,7 @@ namespace UnityEngine.XR.Content.Interaction
             set
             {
                 m_UseGravity = value;
-                m_DynamicMoveProvider.useGravity = value;
-                m_TwoHandedGrabMoveProvider.useGravity = value;
-                m_TwoHandedGrabMoveProvider.leftGrabMoveProvider.useGravity = value;
-                m_TwoHandedGrabMoveProvider.rightGrabMoveProvider.useGravity = value;
-                if (value)
-                {
-#pragma warning disable CS0618 // Type or member is obsolete
-                    m_TwoHandedGrabMoveProvider.gravityMode = k_DefaultGravityMode;
-                    m_TwoHandedGrabMoveProvider.leftGrabMoveProvider.gravityMode = k_DefaultGravityMode;
-                    m_TwoHandedGrabMoveProvider.rightGrabMoveProvider.gravityMode = k_DefaultGravityMode;
-#pragma warning restore CS0618 // Type or member is obsolete
-                }
+                m_GravityProvider.useGravity = m_UseGravity;
             }
         }
 
@@ -286,19 +285,7 @@ namespace UnityEngine.XR.Content.Interaction
             if (m_ComfortMode != null)
                 m_ComfortMode.SetActive(m_EnableComfortMode);
 
-            m_DynamicMoveProvider.useGravity = m_UseGravity;
-            m_TwoHandedGrabMoveProvider.useGravity = m_UseGravity;
-            m_TwoHandedGrabMoveProvider.leftGrabMoveProvider.useGravity = m_UseGravity;
-            m_TwoHandedGrabMoveProvider.rightGrabMoveProvider.useGravity = m_UseGravity;
-            if (m_UseGravity)
-            {
-#pragma warning disable CS0618 // Type or member is obsolete
-                m_TwoHandedGrabMoveProvider.gravityMode = k_DefaultGravityMode;
-                m_TwoHandedGrabMoveProvider.leftGrabMoveProvider.gravityMode = k_DefaultGravityMode;
-                m_TwoHandedGrabMoveProvider.rightGrabMoveProvider.gravityMode = k_DefaultGravityMode;
-#pragma warning restore CS0618 // Type or member is obsolete
-            }
-
+            m_GravityProvider.useGravity = m_UseGravity;
             m_DynamicMoveProvider.enableFly = m_EnableFly;
             m_TwoHandedGrabMoveProvider.enableFreeYMovement = m_EnableFly;
             m_TwoHandedGrabMoveProvider.leftGrabMoveProvider.enableFreeYMovement = m_EnableFly;

@@ -1,0 +1,572 @@
+{
+    "name": "XR Interaction Simulator Controls",
+    "maps": [
+        {
+            "name": "Main",
+            "id": "c96c4ddb-3eb8-4074-bbd9-a8ae6f1f6475",
+            "actions": [
+                {
+                    "name": "X Translate",
+                    "type": "Value",
+                    "id": "d4eb7006-5077-4816-9d5c-f570b6d586f3",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Z Translate",
+                    "type": "Value",
+                    "id": "3ea275ac-e111-4610-891f-105676c72cd5",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Y Translate",
+                    "type": "Value",
+                    "id": "5cc58f95-e9dc-4675-a42e-dd66874c3ba3",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Toggle Manipulate Left",
+                    "type": "Button",
+                    "id": "847b79d9-a69b-4484-8688-a4bf40e58163",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Toggle Manipulate Right",
+                    "type": "Button",
+                    "id": "241f6068-ebc8-4c6d-b747-8bc2c1f74f87",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Toggle Manipulate Head",
+                    "type": "Button",
+                    "id": "f5febf74-651b-4f73-8d0a-08b0acdabc4d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Cycle Devices",
+                    "type": "Button",
+                    "id": "d728c6fb-4deb-4268-9110-d64c7861cd17",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Keyboard Rotation Delta",
+                    "type": "Value",
+                    "id": "0b945dbf-d750-40cb-97c6-593686fcf012",
+                    "expectedControlType": "Vector2",
+                    "processors": "ScaleVector2(x=3,y=3)",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Toggle Mouse",
+                    "type": "Button",
+                    "id": "0d3e6ba8-5003-4e87-88fd-d173e4669b16",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Mouse Rotation Delta",
+                    "type": "Value",
+                    "id": "962fe178-9cca-4e50-9c28-1678bdef1f2e",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Mouse Scroll",
+                    "type": "Value",
+                    "id": "b2a408da-a9fd-4638-9af3-17fb9bc2811d",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Z Constraint",
+                    "type": "Button",
+                    "id": "d3e9308c-6f8c-46f7-bb6f-14422c345983",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "X Constraint",
+                    "type": "Button",
+                    "id": "11dc7a94-7230-49ff-b56d-06e6473e9951",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Y Constraint",
+                    "type": "Button",
+                    "id": "11ab79c6-b9c6-4301-8086-3e9c6904ef14",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Reset",
+                    "type": "Button",
+                    "id": "339ccb79-aee9-4ba4-8864-3b6c81c199db",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Cycle Quick Action",
+                    "type": "Button",
+                    "id": "ccb24539-98db-4cd7-a1e9-20bbb63e6c7c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Toggle Perform Quick Action",
+                    "type": "Button",
+                    "id": "1d046e41-ffee-47fc-8eb7-009b81d7d463",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Left Device Actions",
+                    "type": "Button",
+                    "id": "88dbb9ff-a55d-4741-a7ea-eb39285ba737",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Toggle Primary 2D Axis Target",
+                    "type": "Button",
+                    "id": "e0fdec2d-309b-4313-aad7-9dcc71f1394d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Toggle Secondary 2D Axis Target",
+                    "type": "Button",
+                    "id": "b3b49ea5-f80f-4d24-a782-d61a13a004b3",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "1D Axis",
+                    "id": "db741065-2a46-439d-9e13-11960dc3355a",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "X Translate",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "3d2e07de-025e-4c2e-98df-250511a8ff6d",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "X Translate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "04e1437d-c862-4a04-8f8e-40e9f52c4f5e",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "X Translate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "cb7c4679-31f4-4170-885a-e7d78c049443",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Z Translate",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "732e790c-f2a2-4f90-b525-53139a358de7",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Z Translate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "d5a98916-ade7-419d-a138-86bcdf05670f",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Z Translate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "fca20498-bf6f-4824-ba15-6dc2d191eb2f",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Y Translate",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "2c01790c-a24a-4266-a2e9-74e2a1ca3fa7",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Y Translate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "f5223aed-93c0-4633-8aa3-c393ce890872",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Y Translate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "71c7e5e7-f445-4612-876f-d6bf5d6e8571",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "ScaleVector2(x=2,y=2)",
+                    "groups": "",
+                    "action": "Keyboard Rotation Delta",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "46ddaac9-982d-45fe-994d-20625c0c08e3",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Keyboard Rotation Delta",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "f22c5b09-b38f-449e-9cee-ce4e1617d5a8",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Keyboard Rotation Delta",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "806b2e40-e883-4e59-8b6f-4b381e6afbb9",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Keyboard Rotation Delta",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "fb7d8ac6-274f-447b-92c3-3e5d62c1ae46",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Keyboard Rotation Delta",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "66e536bc-b5b6-4c7b-903a-fbcc05fc854e",
+                    "path": "<Mouse>/scroll",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Mouse Scroll",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0fa0d566-1e07-4e17-9b14-3e8fce69ec26",
+                    "path": "<Keyboard>/v",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "X Constraint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "71c185e1-73fb-4691-b910-70610f397b42",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Y Constraint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "09809c10-d09e-4c49-b58f-1995e50cf685",
+                    "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Z Constraint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cd7dcdd6-b569-4c25-87ea-c62a0fb1cf89",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Reset",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5dacc4c7-2e70-4500-8c72-99595c72b49e",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Cycle Devices",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e8a0a3b9-06cf-40a8-86d8-1d8f1d704451",
+                    "path": "<Keyboard>/rightBracket",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Toggle Manipulate Right",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b62df009-54c9-4b03-9721-07ca66fe1bdf",
+                    "path": "<Keyboard>/leftBracket",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Toggle Manipulate Left",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "86517ac9-cd2e-4c4d-b65b-9a4778775f45",
+                    "path": "<Keyboard>/backquote",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Cycle Quick Action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3e77bddb-a66d-4efe-bdca-d2e589f6f5ab",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Toggle Perform Quick Action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "172a43ed-da34-4ccd-a9b3-07c4f61fa144",
+                    "path": "<Keyboard>/h",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Toggle Manipulate Head",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b60dac83-d2d0-4ce2-9110-6594bb414c06",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Left Device Actions",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5293c2a3-bad4-4a0e-9068-683f86bc0aa2",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Toggle Mouse",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cfb9abc5-87fa-42c9-bdd0-6a65150e573e",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Mouse Rotation Delta",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "81d47d9e-4920-4098-94d8-bac2888d6433",
+                    "path": "<Keyboard>/0",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Toggle Secondary 2D Axis Target",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4bfdd0e6-1936-4f44-8e97-20e16dbc879f",
+                    "path": "<Keyboard>/9",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Toggle Primary 2D Axis Target",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "UI",
+            "id": "58a8d986-915c-4e05-8f5c-82630ab36cb1",
+            "actions": [
+                {
+                    "name": "ToggleActionMenu",
+                    "type": "Button",
+                    "id": "9cf6336f-a66e-49cc-98ec-029ee4a05b7f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ToggleInputSelectionMenu",
+                    "type": "Button",
+                    "id": "47fdc296-4a53-41c0-a978-ff0096493db1",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "4ae39c2f-52ef-4e8e-9aed-d5fe6c7c55d4",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ToggleActionMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c5636bc1-ad11-4a8c-abc6-ec1a98fe94f7",
+                    "path": "<Keyboard>/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ToggleInputSelectionMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

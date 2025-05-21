@@ -466,12 +466,14 @@ namespace UnityEngine.XR.Content.Interaction
         void EnableTurnAround()
         {
             m_Manager.snapTurnProvider.enableTurnAround = true;
+            m_Manager.smoothTurnProvider.enableTurnAround = true;
             m_TurnAroundLabel.text = $"Turn Around \n{(m_Manager.snapTurnProvider.enableTurnAround ? "Enabled" : "Disabled")}";
         }
 
         void DisableTurnAround()
         {
             m_Manager.snapTurnProvider.enableTurnAround = false;
+            m_Manager.smoothTurnProvider.enableTurnAround = false;
             m_TurnAroundLabel.text = $"Turn Around \n{(m_Manager.snapTurnProvider.enableTurnAround ? "Enabled" : "Disabled")}";
         }
 
