@@ -36,6 +36,9 @@ namespace UnityEngine.XR.Content.Interaction
         float m_KeyPullDistance = 0.1f;
 
         [SerializeField]
+        bool m_startLocked = true;
+
+        [SerializeField]
         [Tooltip("Events to fire when the door is locked.")]
         UnityEvent m_OnLock = new UnityEvent();
 
@@ -47,6 +50,7 @@ namespace UnityEngine.XR.Content.Interaction
         JointLimits m_ClosedDoorLimits;
         bool m_Closed = false;
         float m_LastHandleValue = 1.0f;
+
 
         bool m_Locked = false;
 
@@ -75,6 +79,7 @@ namespace UnityEngine.XR.Content.Interaction
             m_DoorJoint.limits = m_ClosedDoorLimits;
             m_KeyKnob.SetActive(false);
             m_Closed = true;
+            m_Locked = m_startLocked;
         }
 
         void Update()
@@ -145,6 +150,9 @@ namespace UnityEngine.XR.Content.Interaction
 
         public void KeyUpdate(float keyValue)
         {
+
+            Vector3 keyKnobChildEulerAngles = m_KeyKnob.transform.GetChild(0).localEulerAngles;
+            m_KeySocket.transform.parent.localRotation = Quaternion.Euler(keyKnobChildEulerAngles.x, keyKnobChildEulerAngles.z, keyKnobChildEulerAngles.y);
             if (!m_Locked && keyValue > m_KeyLockValue)
             {
                 m_Locked = true;
