@@ -1,8 +1,8 @@
-# XR Interaction Toolkit Examples - Version 3.0.7
+# XR Interaction Toolkit Examples - Version 3.1.2
 
 ## Introduction
 
-This project provides examples that use Unity's [XR Interaction Toolkit](https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@3.0/manual/index.html) (XRI) to demonstrate its functionality with example assets and behaviors.
+This project provides examples that use Unity's [XR Interaction Toolkit](https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@3.1/manual/index.html) (XRI) to demonstrate its functionality with example assets and behaviors.
 The intention of this project is to provide a means for getting started with the features in the XR Interaction Toolkit package.
 
 > Note: If you are looking for the original XRI Examples project, that has been archived into two separate branches [Classic 1.0](https://github.com/Unity-Technologies/XR-Interaction-Toolkit-Examples/tree/1.0/classic) and [Classic 2.2](https://github.com/Unity-Technologies/XR-Interaction-Toolkit-Examples/tree/classic/2.2). Both of these branches still have both the `AR` and `VR` projects available.

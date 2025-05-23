@@ -5,6 +5,20 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- Headers should be listed in this order: Added, Changed, Deprecated, Removed, Fixed, Security -->
+## [3.1.2] - 2025-05-16
+
+### Changed
+- Updated `com.unity.inputsystem` to version `1.13.1`
+- Updated `com.unity.xr.interaction.toolkit` to version `3.1.2`
+- Updated `com.unity.xr.management` to version `4.5.1`
+- Updated `com.unity.xr.openxr` to version `1.14.3`
+- Updated `com.unity.ai.navigation` to version `1.1.6`
+- Updated `com.unity.timeline` to version `1.7.7`
+- Changed to using `com.unity.feature.development` version `1.0.2` instead of IDE-specific packages.
+- Updated Unity Editor to `2022.3.56f1`
+
+### Removed
+- Removed `com.unity.xr.oculus`.
 
 ## [3.0.7] - 2024-11-27
 
