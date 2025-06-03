@@ -1,0 +1,37 @@
+{
+    "name": "Meta Utilities Editor",
+    "rootNamespace": "Meta.Utilities.Editor",
+    "references": [
+        "GUID:51c2c203806c51b44a2e1b60d78e3429",
+        "GUID:c838f225bd3af1e44ae0885be219eb14",
+        "GUID:1491147abca9d7d4bb7105af628b223e",
+        "GUID:0a0471484b079be408cb3a0d7fe94736"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.search.extensions",
+            "expression": "0",
+            "define": "UNITY_SEARCH_EXTENSIONS"
+        },
+        {
+            "name": "com.unity.netcode.gameobjects",
+            "expression": "0",
+            "define": "UNITY_NETCODE_GAMEOBJECTS"
+        },
+        {
+            "name": "com.marijnzwemmer.unity-toolbar-extender",
+            "expression": "0",
+            "define": "TOOLBAR_EXTENDER"
+        }
+    ],
+    "noEngineReferences": false
+}
