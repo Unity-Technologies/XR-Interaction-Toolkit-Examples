@@ -250,8 +250,8 @@ namespace Meta.Utilities.Ropes
         protected virtual void SetupHandRefs()
         {
             // Set the references to the left and right hands its easier to define these elsewhere but this is also fine
-            m_grabAnchors[0].Hand = m_leftHand;
-            m_grabAnchors[1].Hand = m_rightHand;
+            //m_grabAnchors[0].Hand = m_leftHand;
+           // m_grabAnchors[1].Hand = m_rightHand;
         }
 
         private void Start()

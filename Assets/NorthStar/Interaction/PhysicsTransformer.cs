@@ -4,6 +4,7 @@ using Meta.Utilities;
 using Oculus.Interaction;
 using Oculus.Interaction.HandGrab;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace NorthStar
 {
@@ -12,7 +13,7 @@ namespace NorthStar
     /// </summary>
     public class PhysicsTransformer : MonoBehaviour, ITransformer
     {
-        private HandGrabInteractable[] m_interactables;
+       // private HandGrabInteractable[] m_interactables;
 
         [SerializeField, AutoSet] private Rigidbody m_body;
         [SerializeField] private float m_additionalDragOnGrab;
@@ -25,10 +26,10 @@ namespace NorthStar
         [SerializeField, Range(0, 2)] private float m_throwVelocityPercent = 0;
         [SerializeField] private int m_velocityHistoryCapacity = 20;
 
-        private Dictionary<HandGrabInteractor, JointState> m_joints = new();
+        private Dictionary<GameObject, JointState> m_joints = new();
         private List<Vector3> m_velocityHistory;
 
-        public delegate void InteractionCallBack(HandGrabInteractor interactor);
+        public delegate void InteractionCallBack(GameObject interactor);
         public InteractionCallBack OnInteraction;
         public InteractionCallBack OnEndInteraction;
 
@@ -36,23 +37,25 @@ namespace NorthStar
         {
             public Rigidbody Body;
             public ConfigurableJoint Joint;
-            public HandGrabInteractable Interactable;
+            public GameObject Interactable;
             public float CreationTime;
             public bool Done = false;
         }
 
         private void Awake()
         {
-            m_interactables = GetComponentsInChildren<HandGrabInteractable>();
+           // m_interactables = GetComponentsInChildren<HandGrabInteractable>();
             m_velocityHistory = new(m_velocityHistoryCapacity);
+            /*
             foreach (var interactable in m_interactables)
             {
                 interactable.WhenSelectingInteractorAdded.Action += (HandGrabInteractor i) => AddInteractor(i, interactable);
                 interactable.WhenSelectingInteractorRemoved.Action += RemoveInteractor;
             }
+            */
         }
 
-        private void AddInteractor(HandGrabInteractor interactor, HandGrabInteractable interactable)
+        public void AddInteractor(GameObject interactor, GameObject interactable)
         {
             Debug.Log(interactable.gameObject.name, interactable.gameObject);
             if (m_joints.ContainsKey(interactor))
@@ -60,15 +63,18 @@ namespace NorthStar
 
             var joint = gameObject.AddComponent<ConfigurableJoint>();
 
-            var physicalHand = interactor.GetComponent<PhysicalHandRef>().Hand;
-            physicalHand.LocalMovementStrengthModifier += m_moveStrengthModifier;
-            physicalHand.LocalRotationStrengthModifier += m_rotationStrengthModifier;
-            physicalHand.ExcessBreakTimer += m_bonusBreakTimer;
+            if(interactor.TryGetComponent<PhysicalHandRef>(out var handRef))
+            {
+                var physicalHand = handRef.Hand;
+                physicalHand.LocalMovementStrengthModifier += m_moveStrengthModifier;
+                physicalHand.LocalRotationStrengthModifier += m_rotationStrengthModifier;
+                physicalHand.ExcessBreakTimer += m_bonusBreakTimer;
+            }
 
             var jointState = new JointState()
             {
                 Interactable = interactable,
-                Body = physicalHand.Rigidbody,
+                Body = interactor.GetComponent<Rigidbody>(),
                 Joint = joint,
                 CreationTime = Time.time
             };
@@ -115,16 +121,12 @@ namespace NorthStar
             m_velocityHistory.Add(m_body.linearVelocity);
         }
 
-        private Vector3 GetPoint(Transform hand, HandGrabInteractable interactable, out Quaternion rotation)
+        private Vector3 GetPoint(Transform hand, GameObject interactable, out Quaternion rotation)
         {
             var point = Vector3.zero;
             rotation = Quaternion.identity;
-            if (interactable.UsesHandPose)
-            {
-                var pose = interactable.HandGrabPoses[0];
-                point = pose.transform.position;
-                rotation = Quaternion.Inverse(transform.rotation) * pose.transform.rotation;
-            }
+            point = interactable.transform.position;
+            rotation = Quaternion.Inverse(transform.rotation) * interactable.transform.rotation;
             if (interactable.gameObject.TryGetComponent(out ExtraInteractionData data))
             {
                 var handRot = Quaternion.identity;
@@ -144,7 +146,7 @@ namespace NorthStar
             return point;
         }
 
-        private void RemoveInteractor(HandGrabInteractor interactor)
+        public void RemoveInteractor(GameObject interactor)
         {
             if (!m_joints.ContainsKey(interactor))
                 return;
@@ -172,10 +174,13 @@ namespace NorthStar
                 }
             }
             OnEndInteraction?.Invoke(interactor);
-            var physicalHand = interactor.GetComponent<PhysicalHandRef>().Hand;
-            physicalHand.LocalMovementStrengthModifier -= m_moveStrengthModifier;
-            physicalHand.LocalRotationStrengthModifier -= m_rotationStrengthModifier;
-            physicalHand.ExcessBreakTimer -= m_bonusBreakTimer;
+            if(interactor.TryGetComponent<PhysicalHandRef>(out var handRef))
+            {
+                var physicalHand = interactor.GetComponent<PhysicalHandRef>().Hand;
+                physicalHand.LocalMovementStrengthModifier -= m_moveStrengthModifier;
+                physicalHand.LocalRotationStrengthModifier -= m_rotationStrengthModifier;
+                physicalHand.ExcessBreakTimer -= m_bonusBreakTimer;
+            }
         }
 
         //To set the joints anchor rotation you have to rotate the target to your desired relative rotation bind the joint then move it back

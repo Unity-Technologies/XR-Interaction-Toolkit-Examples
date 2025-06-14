@@ -18,20 +18,20 @@ namespace Meta.Utilities.Ropes
 
         protected void Awake()
         {
-            var interactable = GetComponentInChildren<HandGrabPose>();
+            var interactable =this.transform;
             m_handRotationOffset = Quaternion.Inverse(transform.rotation) * interactable.transform.rotation;
         }
 
         public bool Grabbed { get; protected set; } = false;
 
-        public SyntheticHand Hand { get; set; }
+        public Transform Hand { get; set; }
 
         protected RopeSystem.Anchor m_anchor;
         protected bool m_invertedGrip;
 
         public Vector3 WorldBindAxis => Hand.transform.TransformDirection(m_gripAxis).normalized;
 
-        public void Grab(HandGrabInteractor interactor)
+        public void Grab(GameObject interactor)
         {
             if (Grabbed) return;
             m_anchor = m_ropeSystem.CreateAnchorViaRopeSim(transform.position, RopeSystem.AnchorType.Dynamic, gameObject);
@@ -50,7 +50,7 @@ namespace Meta.Utilities.Ropes
             m_body.isKinematic = false;
         }
 
-        public void EndGrab(HandGrabInteractor interactor)
+        public void EndGrab(GameObject interactor)
         {
             if (!Grabbed) return;
             Grabbed = false;

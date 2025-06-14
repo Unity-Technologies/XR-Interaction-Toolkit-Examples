@@ -14,8 +14,8 @@ namespace NorthStar
 
             if (m_bodyPositions is not null && m_grabAnchors.Length == 2)
             {
-                m_grabAnchors[0].Hand = m_bodyPositions.SyntheticHands[0];
-                m_grabAnchors[1].Hand = m_bodyPositions.SyntheticHands[1];
+               // m_grabAnchors[0].Hand = m_bodyPositions.SyntheticHands[0];
+               // m_grabAnchors[1].Hand = m_bodyPositions.SyntheticHands[1];
             }
         }
     }

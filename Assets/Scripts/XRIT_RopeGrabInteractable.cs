@@ -1,10 +1,10 @@
-#if UNITY_XR_INTERACTION_TOOLKIT && META_ROPE_UTILITIES // Assuming BurstRope is in Meta.Utilities.Ropes
+
 
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using Meta.Utilities.Ropes; // For BurstRope and BindingPoint
 
-[RequireComponent(typeof(XRGrabInteractable))]
+[RequireComponent(typeof(UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable))]
 public class XRIT_RopeGrabInteractable : MonoBehaviour
 {
     [Header("Rope Settings")]
@@ -16,8 +16,8 @@ public class XRIT_RopeGrabInteractable : MonoBehaviour
     [Tooltip("Strength of the binding. A value of 0 means an unbreakable bond.")]
     private float m_BindingStrength = 0.0f; // 0 for unbreakable, higher for more 'give' if BurstRope supports it
 
-    private XRGrabInteractable m_GrabInteractable;
-    private IXRSelectInteractor m_Interactor;
+    private UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable m_GrabInteractable;
+    private UnityEngine.XR.Interaction.Toolkit.Interactors.IXRSelectInteractor m_Interactor;
 
     // Store the original index of our binding point in the BurstRope's list.
     // If -1, we need to add a new one.
@@ -26,7 +26,7 @@ public class XRIT_RopeGrabInteractable : MonoBehaviour
 
     void Awake()
     {
-        m_GrabInteractable = GetComponent<XRGrabInteractable>();
+        m_GrabInteractable = GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>();
 
         if (m_Rope == null)
         {
@@ -150,25 +150,3 @@ public class XRIT_RopeGrabInteractable : MonoBehaviour
         }
     }
 }
-
-#else // Stubs for when XR Interaction Toolkit or Meta Rope Utilities are not present
-using UnityEngine;
-public class XRIT_RopeGrabInteractable : MonoBehaviour
-{
-    [Header("Rope Settings")]
-    [SerializeField]
-    [Tooltip("The BurstRope system this interactable will control.")]
-    private Component m_Rope; // Use Component as a generic placeholder for BurstRope
-
-    void Awake()
-    {
-        #if !UNITY_XR_INTERACTION_TOOLKIT
-        Debug.LogError("XRIT_RopeGrabInteractable: XR Interaction Toolkit is not enabled in this project. Please install the package.", this);
-        #endif
-        #if !META_ROPE_UTILITIES
-        Debug.LogError("XRIT_RopeGrabInteractable: Meta.Utilities.Ropes (BurstRope) seems to be missing. Ensure the META_ROPE_UTILITIES scripting define symbol is set if the package is present under a different name or its asmdef doesn't auto-define it.", this);
-        #endif
-        enabled = false;
-    }
-}
-#endif

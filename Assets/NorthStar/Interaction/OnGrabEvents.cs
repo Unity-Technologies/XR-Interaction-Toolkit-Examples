@@ -28,12 +28,12 @@ namespace NorthStar
             m_physicsTransformer.OnEndInteraction -= EndGrab;
         }
 
-        private void EndGrab(HandGrabInteractor interactor)
+        private void EndGrab(GameObject interactor)
         {
             OnRelease.Invoke();
         }
 
-        private void Grab(HandGrabInteractor interactor)
+        private void Grab(GameObject interactor)
         {
             OnGrab.Invoke();
         }

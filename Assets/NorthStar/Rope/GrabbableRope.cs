@@ -36,13 +36,13 @@ namespace NorthStar
             m_hand = m_leftHand ? BodyPositions.GetLeftHand() : BodyPositions.GetRightHand();
         }
 
-        private void EndGrab(HandGrabInteractor interactor)
+        private void EndGrab(GameObject interactor)
         {
             if (!m_grabing) return; m_grabing = false;
             m_rope.Binds[BindingPointIndex] = new();
         }
 
-        private void Grab(HandGrabInteractor interactor)
+        private void Grab(GameObject interactor)
         {
             if (m_grabing) return; m_grabing = true;
             TargetIndex = m_rope.ClosestIndexToPoint(transform.position);
