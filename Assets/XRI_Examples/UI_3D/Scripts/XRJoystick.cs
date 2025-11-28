@@ -29,6 +29,10 @@ namespace UnityEngine.XR.Content.Interaction
         JoystickType m_JoystickMotion = JoystickType.BothCircle;
 
         [SerializeField]
+        [Tooltip("Optional reference frame used to interpret joystick movement (e.g. ship cockpit root).")]
+        Transform referenceFrame = null;   // INSERTED FIELD (minimally replacing shipRoot)
+
+        [SerializeField]
         [Tooltip("The object that is visually grabbed and manipulated")]
         Transform m_Handle = null;
 
@@ -59,6 +63,12 @@ namespace UnityEngine.XR.Content.Interaction
         ValueChangeEvent m_OnValueChangeY = new ValueChangeEvent();
 
         IXRSelectInteractor m_Interactor;
+
+        /// <summary>
+        /// Helper accessor. If a custom reference frame is assigned, the joystick movement
+        /// will be interpreted relative to that frame. Otherwise this joystick's own transform is used.
+        /// </summary>
+        Transform Frame => referenceFrame != null ? referenceFrame : transform;
 
         /// <summary>
         /// Controls how the joystick moves
@@ -135,6 +145,10 @@ namespace UnityEngine.XR.Content.Interaction
         {
             if (m_RecenterOnRelease)
                 SetHandleAngle(Vector2.zero);
+
+            // Align joystick's logical space with the reference frame if supplied
+            if (referenceFrame != null)
+                transform.rotation = referenceFrame.rotation;
         }
 
         protected override void OnEnable()
@@ -185,7 +199,10 @@ namespace UnityEngine.XR.Content.Interaction
         Vector3 GetLookDirection()
         {
             Vector3 direction = m_Interactor.GetAttachTransform(this).position - m_Handle.position;
-            direction = transform.InverseTransformDirection(direction);
+
+            // Use the chosen frame (referenceFrame or local)
+            direction = Frame.InverseTransformDirection(direction);
+
             switch (m_JoystickMotion)
             {
                 case JoystickType.FrontBack:
@@ -203,6 +220,11 @@ namespace UnityEngine.XR.Content.Interaction
         void UpdateValue()
         {
             var lookDirection = GetLookDirection();
+
+            // Apply reference-frame yaw correction so left/right & forward/back align visually
+            lookDirection = Quaternion.Inverse(
+                Quaternion.Euler(0, Frame.eulerAngles.y, 0)
+            ) * lookDirection;
 
             // Get up/down angle and left/right angle
             var upDownAngle = Mathf.Atan2(lookDirection.z, lookDirection.y) * Mathf.Rad2Deg;
@@ -268,7 +290,23 @@ namespace UnityEngine.XR.Content.Interaction
             var largerComp = Mathf.Max(Mathf.Abs(xComp), Mathf.Abs(zComp));
             var yComp = Mathf.Sqrt(1.0f - largerComp * largerComp);
 
-            m_Handle.up = (transform.up * yComp) + (transform.right * xComp) + (transform.forward * zComp);
+            // Original constraint behavior (Unity)
+            m_Handle.up = (transform.up * yComp) +
+                          (transform.right * xComp) +
+                          (transform.forward * zComp);
+
+            /*
+             * Yaw compensation fix:
+             * The original XRJoystick assumes its parent has no yaw rotation.
+             * In cockpit or vehicle hierarchies, joysticks often inherit yaw from
+             * a rotated parent (e.g. a ship hull). Unity's "up alignment"
+             * produces a 90° snap in these cases.
+             *
+             * Rotating the handle by the reference frame's yaw ensures the joystick's
+             * tilt directions visually match the cockpit orientation, eliminating the snap.
+             */
+            Quaternion yawFix = Quaternion.Euler(0, Frame.eulerAngles.y, 0);
+            m_Handle.rotation = yawFix * m_Handle.rotation;
         }
 
         void OnDrawGizmosSelected()
